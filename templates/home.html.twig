@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+	{% block title %}  {% endblock %}
+	 {% block stylesheets %}{% endblock %}
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/css/bootstrap.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/style.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/css/dark.css')}}" type="text/css" />
+
+	<link rel="stylesheet" href="{{ asset ('/css/font-icons.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/css/animate.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/css/magnific-popup.css')}}" type="text/css" />
+
+	<link rel="stylesheet" href="{{ asset ('/css/responsive.css')}}" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Workspace Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="{{ asset ('/css/colors.php?color=267DF4')}}" type="text/css" /> <!-- Theme Color -->
+	<link rel="stylesheet" href="{{ asset ('/coworking/css/fonts.css')}}" type="text/css" /> <!-- Theme Font -->
+	<link rel="stylesheet" href="{{ asset ('/coworking/coworking.css')}}" type="text/css" /> <!-- Theme CSS -->
+	<!-- / -->
+
+	<!-- Document Title
+	============================================= -->
+	<title>Coworking | Oficina </title>
+
+</head>
+        
+
+<body class="stretched">
+
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="clearfix static-sticky border-bottom-0">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="index" class="standard-logo" data-sticky-logo="/coworking/images/ofi.png"><img src="/coworking/images/oficina.png" alt="Canvas Logo"></a>
+						<a href="index" class="retina-logo" data-sticky-logo="/coworking/images/ofi.png"><img src="/coworking/images/oficina.png" alt="Canvas Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu" class="dark">
+
+						<ul>
+							<li class="current"><a href="index"><div>Home</div></a>
+								<ul>
+									<li><a href="index-corporate.html"><div>Home - Corporate</div></a>
+										<ul>
+											<li><a href="index-corporate.html"><div>Corporate - Layout 1</div></a></li>
+											<li><a href="index-corporate-2.html"><div>Corporate - Layout 2</div></a></li>
+											<li><a href="index-corporate-3.html"><div>Corporate - Layout 3</div></a></li>
+											<li><a href="index-corporate-4.html"><div>Corporate - Layout 4</div></a></li>
+										</ul>
+									</li>
+									<li><a href="index-portfolio.html"><div>Home - Portfolio</div></a>
+										<ul>
+											<li><a href="index-portfolio.html"><div>Portfolio - Layout 1</div></a></li>
+											<li><a href="index-portfolio-2.html"><div>Portfolio - Layout 2</div></a></li>
+											<li><a href="index-portfolio-3.html"><div>Portfolio - Masonry</div></a></li>
+											<li><a href="index-portfolio-4.html"><div>Portfolio - AJAX</div></a></li>
+										</ul>
+									</li>
+									<li><a href="index-blog.html"><div>Home - Blog</div></a>
+										<ul>
+											<li><a href="index-blog.html"><div>Blog - Layout 1</div></a></li>
+											<li><a href="index-blog-2.html"><div>Blog - Layout 2</div></a></li>
+											<li><a href="index-blog-3.html"><div>Blog - Layout 3</div></a></li>
+										</ul>
+									</li>
+									<li><a href="index-shop.html"><div>Home - Shop</div></a>
+										<ul>
+											<li><a href="index-shop.html"><div>Shop - Layout 1</div></a></li>
+											<li><a href="index-shop-2.html"><div>Shop - Layout 2</div></a></li>
+										</ul>
+									</li>
+									<li><a href="index-magazine.html"><div>Home - Magazine</div></a>
+										<ul>
+											<li><a href="index-magazine.html"><div>Magazine - Layout 1</div></a></li>
+											<li><a href="index-magazine-2.html"><div>Magazine - Layout 2</div></a></li>
+											<li><a href="index-magazine-3.html"><div>Magazine - Layout 3</div></a></li>
+										</ul>
+									</li>
+									<li><a href="landing.html"><div>Home - Landing Page</div></a>
+										<ul>
+											<li><a href="landing.html"><div>Landing Page - Layout 1</div></a></li>
+											<li><a href="landing-2.html"><div>Landing Page - Layout 2</div></a></li>
+											<li><a href="landing-3.html"><div>Landing Page - Layout 3</div></a></li>
+											<li><a href="landing-4.html"><div>Landing Page - Layout 4</div></a></li>
+											<li><a href="landing-5.html"><div>Landing Page - Layout 5</div></a></li>
+										</ul>
+									</li>
+									<li><a href="index-fullscreen-image.html"><div>Home - Full Screen</div></a>
+										<ul>
+											<li><a href="index-fullscreen-image.html"><div>Full Screen - Image</div></a></li>
+											<li><a href="index-fullscreen-slider.html"><div>Full Screen - Slider</div></a></li>
+											<li><a href="index-fullscreen-video.html"><div>Full Screen - Video</div></a></li>
+										</ul>
+									</li>
+									<li><a href="index-onepage.html"><div>Home - One Page</div></a>
+										<ul>
+											<li><a href="index-onepage.html"><div>One Page - Default</div></a></li>
+											<li><a href="index-onepage-2.html"><div>One Page - Submenu</div></a></li>
+											<li><a href="index-onepage-3.html"><div>One Page - Dots Style</div></a></li>
+										</ul>
+									</li>
+									<li><a href="index-wedding.html"><div>Home - Wedding</div></a></li>
+									<li><a href="index-restaurant.html"><div>Home - Restaurant</div></a></li>
+									<li><a href="index-events.html"><div>Home - Events</div></a></li>
+									<li><a href="index-parallax.html"><div>Home - Parallax</div></a></li>
+									<li><a href="index-app-showcase.html"><div>Home - App Showcase</div></a></li>
+									<li><a href="index-boxed.html"><div>Home - Boxed Layout</div></a></li>
+								</ul>
+							</li>
+							<li><a href="#"><div>Features</div></a>
+								<ul>
+									<li><a href="#"><div><i class="icon-stack"></i>Sliders</div></a>
+										<ul>
+											<li><a href="slider-revolution.html"><div>Revolution Slider</div></a>
+												<ul>
+													<li><a href="rs-demos.html"><div>Premium Templates</div></a></li>
+													<li><a href="slider-revolution.html"><div>Full Screen</div></a></li>
+													<li><a href="slider-revolution-fullwidth.html"><div>Full Width</div></a></li>
+													<li><a href="slider-revolution-kenburns.html"><div>Kenburns Effect</div></a></li>
+													<li><a href="slider-revolution-html5-videos.html"><div>HTML5 Video</div></a></li>
+												</ul>
+											</li>
+											<li><a href="slider-canvas.html"><div>Canvas Slider</div></a>
+												<ul>
+													<li><a href="slider-canvas.html"><div>Full Width</div></a></li>
+													<li><a href="slider-canvas-fade.html"><div>Fade Transition</div></a></li>
+													<li><a href="slider-canvas-autoplay.html"><div>Autoplay Feature</div></a></li>
+													<li><a href="slider-canvas-video-event.html"><div>Custom Video Event</div></a></li>
+													<li><a href="slider-canvas-pagination.html"><div>Pagination Navigation</div></a></li>
+													<li><a href="slider-canvas-3.html"><div>3 Columns</div></a></li>
+													<li><a href="slider-canvas-4.html"><div>4 Columns</div></a></li>
+													<li><a href="slider-canvas-5.html"><div>5 Columns</div></a></li>
+												</ul>
+											</li>
+											<li><a href="slider-flex.html"><div>Flex Slider</div></a>
+												<ul>
+													<li><a href="slider-flex.html"><div>Default Layout</div></a></li>
+													<li><a href="slider-flex-thumbs.html"><div>with Thumbs</div></a></li>
+												</ul>
+											</li>
+											<li><a href="slider-owl.html"><div>Owl Slider</div></a>
+												<ul>
+													<li><a href="slider-owl-full.html"><div>Full Width</div></a></li>
+													<li><a href="slider-owl.html"><div>Boxed Width</div></a></li>
+													<li><a href="slider-owl-videos.html"><div>Video Slider</div></a></li>
+												</ul>
+											</li>
+											<li><a href="static-parallax.html"><div>Static Media</div></a>
+												<ul>
+													<li><a href="static-parallax.html"><div>Static - Parallax</div></a></li>
+													<li><a href="static-image.html"><div>Static - Image</div></a></li>
+													<li><a href="static-thumbs-grid.html"><div>Static - Thumb Gallery</div></a></li>
+													<li><a href="static-html5-video.html"><div>Static - HTML5 Video</div></a></li>
+													<li><a href="static-embed-video.html"><div>Static - Embedded Video</div></a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li><a href="widgets.html"><div><i class="icon-gift"></i>Widgets</div></a>
+										<ul>
+											<li><a href="widgets.html"><div>Links</div></a></li>
+											<li><a href="widgets.html"><div>Flickr Photostream</div></a></li>
+											<li><a href="widgets.html"><div>Dribbble Shots</div></a></li>
+											<li><a href="widgets.html"><div>Instagram Feed</div></a></li>
+											<li><a href="widgets.html"><div>Posts List</div></a></li>
+											<li><a href="widgets.html"><div>Twitter Feed</div></a></li>
+											<li><a href="widgets.html"><div>Tabbed Widgets</div></a></li>
+											<li><a href="widgets.html"><div>Carousel</div></a></li>
+											<li><a href="widgets.html"><div>Subscribers</div></a></li>
+											<li><a href="widgets.html"><div>Social Icons</div></a></li>
+											<li><a href="widgets.html"><div>Testimonials</div></a></li>
+											<li><a href="widgets.html"><div>Quick Contact</div></a></li>
+											<li><a href="widgets.html"><div>Tags Cloud</div></a></li>
+											<li><a href="widgets.html"><div>Video Embeds</div></a></li>
+											<li><a href="widgets.html"><div>Raw Text/HTML</div></a></li>
+										</ul>
+									</li>
+									<li><a href="#"><div><i class="icon-umbrella"></i>Headers</div></a>
+										<ul>
+											<li><a href="header-light.html"><div>Light Version</div></a></li>
+											<li><a href="header-dark.html"><div>Dark Version</div></a></li>
+											<li><a href="header-transparent.html"><div>Transparent</div></a></li>
+											<li><a href="header-semi-transparent.html"><div>Semi Transparent</div></a>
+												<ul>
+													<li><a href="header-semi-transparent.html"><div>Light Version</div></a></li>
+													<li><a href="header-semi-transparent-dark.html"><div>Dark Version</div></a></li>
+												</ul>
+											</li>
+											<li><a href="header-side-left.html"><div>Left Side Header</div></a>
+												<ul>
+													<li><a href="header-side-left.html"><div>Fixed Position</div></a></li>
+													<li><a href="header-side-left-open.html"><div>OnClick Open</div></a></li>
+													<li><a href="header-side-left-open-push.html"><div>Push Content</div></a></li>
+												</ul>
+											</li>
+											<li><a href="header-side-right.html"><div>Right Side Header</div></a>
+												<ul>
+													<li><a href="header-side-right.html"><div>Fixed Position</div></a></li>
+													<li><a href="header-side-right-open.html"><div>OnClick Open</div></a></li>
+													<li><a href="header-side-right-open-push.html"><div>Push Content</div></a></li>
+												</ul>
+											</li>
+											<li><a href="header-floating.html"><div>Floating Version</div></a></li>
+											<li><a href="static-sticky.html"><div>Static Sticky</div></a></li>
+											<li><a href="responsive-sticky.html"><div>Responsive Sticky</div></a></li>
+											<li><a href="logo-changer.html"><div>Alternate Logos</div></a></li>
+											<li><a href="alternate-mobile-menu.html"><div>Alternate Mobile Menu</div></a></li>
+										</ul>
+									</li>
+									<li><a href="forms.html"><div><i class="icon-wpforms"></i>Forms</div></a></li>
+									<li><a href="side-panel.html"><div><i class="icon-line-layout"></i>Side Panel</div></a>
+										<ul>
+											<li><a href="side-panel-left-overlay.html"><div>Left Overlay</div></a></li>
+											<li><a href="side-panel-left-push.html"><div>Left Push</div></a></li>
+											<li><a href="side-panel-right-overlay.html"><div>Right Overlay</div></a></li>
+											<li><a href="side-panel.html"><div>Right Push</div></a></li>
+											<li><a href="side-panel-light.html"><div>Light Background</div></a></li>
+										</ul>
+									</li>
+									<li><a href="mega-menu.html"><div><i class="icon-line-columns"></i>Mega Menu</div></a></li>
+									<li><a href="#"><div><i class="icon-align-justify2"></i>Menu Styles</div></a>
+										<ul>
+											<li><a href="header-light.html"><div>Menu - Style 1</div></a></li>
+											<li><a href="menu-2.html"><div>Menu - Style 2</div></a></li>
+											<li><a href="menu-3.html"><div>Menu - Style 3</div></a></li>
+											<li><a href="menu-4.html"><div>Menu - Style 4</div></a></li>
+											<li><a href="menu-5.html"><div>Menu - Style 5</div></a></li>
+											<li><a href="menu-6.html"><div>Menu - Style 6</div></a></li>
+											<li><a href="menu-7.html"><div>Menu - Style 7</div></a></li>
+											<li><a href="menu-8.html"><div>Menu - Style 8</div></a></li>
+											<li><a href="menu-9.html"><div>Menu - Style 9</div></a></li>
+											<li><a href="menu-10.html"><div>Menu - Overlay</div></a></li>
+											<li><a href="split-menu.html"><div>Menu - Split Layout</div></a></li>
+										</ul>
+									</li>
+									<li><a href="#"><div><i class="icon-ok-sign"></i>Page Titles</div></a>
+										<ul>
+											<li><a href="page.html"><div>Left Align</div></a></li>
+											<li><a href="page-title-right.html"><div>Right Align</div></a></li>
+											<li><a href="page-title-center.html"><div>Center Align</div></a></li>
+											<li><a href="page-titledark.html"><div>Dark Style</div></a></li>
+											<li><a href="page-title-pattern.html"><div>Pattern Background</div></a></li>
+											<li><a href="page-title-parallax.html"><div>Parallax Background</div></a>
+												<ul>
+													<li><a href="page-title-parallax.html"><div>Default Header</div></a></li>
+													<li><a href="page-title-parallax-header.html"><div>Transparent Header</div></a></li>
+												</ul>
+											</li>
+											<li><a href="page-title-video.html"><div>HTML5 Video</div></a></li>
+											<li><a href="page-title-nobg.html"><div>No Background</div></a></li>
+											<li><a href="page-title-mini.html"><div>Mini Version</div></a></li>
+										</ul>
+									</li>
+									<li><a href="contact.html"><div><i class="icon-envelope-alt"></i>Contact Pages</div></a>
+										<ul>
+											<li><a href="contact.html">Contact 1</a></li>
+											<li><a href="contact-2.html">Contact 2</a></li>
+											<li><a href="contact-3.html">Contact 3</a></li>
+											<li><a href="contact-4.html">Contact 4</a></li>
+											<li><a href="contact-5.html">Contact 5</a></li>
+											<li><a href="contact-6.html">Contact 6</a></li>
+											<li><a href="contact-7.html">Contact 7</a></li>
+										</ul>
+									</li>
+									<li><a href="#footer" data-scrollto="#footer"><div><i class="icon-th"></i>Footers</div></a>
+										<ul>
+											<li><a href="sticky-footer.html"><div>Sticky Footer</div></a></li>
+											<li><a href="#footer" data-scrollto="#footer"><div>Footer - Layout 1</div></a></li>
+											<li><a href="footer-2.html#footer"><div>Footer - Layout 2</div></a></li>
+											<li><a href="footer-3.html#footer"><div>Footer - Layout 3</div></a></li>
+											<li><a href="footer-4.html#footer"><div>Footer - Layout 4</div></a></li>
+											<li><a href="footer-5.html#footer"><div>Footer - Layout 5</div></a></li>
+											<li><a href="footer-6.html#footer"><div>Footer - Layout 6</div></a></li>
+											<li><a href="footer-7.html#footer"><div>Footer - Layout 7</div></a></li>
+										</ul>
+									</li>
+									<li><a href="#"><div><i class="icon-calendar3"></i>Events</div></a>
+										<ul>
+											<li><a href="events-calendar.html"><div>Full Width Calendar</div></a></li>
+											<li><a href="events-list.html"><div>Events List</div></a>
+												<ul>
+													<li><a href="events-list.html"><div>Right Sidebar</div></a></li>
+													<li><a href="events-list-left-sidebar.html"><div>Left Sidebar</div></a></li>
+													<li><a href="events-list-both-sidebar.html"><div>Both Sidebar</div></a></li>
+													<li><a href="events-list-fullwidth.html"><div>Full Width</div></a></li>
+													<li><a href="events-list-parallax.html"><div>Parallax List</div></a></li>
+												</ul>
+											</li>
+											<li><a href="event-single.html"><div>Single Event</div></a>
+												<ul>
+													<li><a href="event-single-right-sidebar.html"><div>Right Sidebar</div></a></li>
+													<li><a href="event-single-left-sidebar.html"><div>Left Sidebar</div></a></li>
+													<li><a href="event-single-both-sidebar.html"><div>Both Sidebar</div></a></li>
+													<li><a href="event-single.html"><div>Full Width</div></a></li>
+												</ul>
+											</li>
+											<li><a href="event-single-full-width-image.html"><div>Single Event - Full</div></a>
+												<ul>
+													<li><a href="event-single-full-width-image.html"><div>Parallax Image</div></a></li>
+													<li><a href="event-single-full-width-map.html"><div>Google Map</div></a></li>
+													<li><a href="event-single-full-width-slider.html"><div>Slider Gallery</div></a></li>
+													<li><a href="event-single-full-width-video.html"><div>HTML5 Video</div></a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li><a href="modal-onload.html"><div><i class="icon-line-expand"></i>Modal OnLoad</div></a>
+										<ul>
+											<li><a href="modal-onload.html"><div>Simple Layout</div></a></li>
+											<li><a href="modal-onload-iframe.html"><div>Video iFrame</div></a></li>
+											<li><a href="modal-onload-subscribe.html"><div>Subscription Form</div></a></li>
+											<li><a href="modal-onload-common-height.html"><div>Common Height</div></a></li>
+											<li><a href="modal-onload-cookie.html"><div>Cookies Enabled</div></a></li>
+										</ul>
+									</li>
+									<li><a href="coming-soon.html"><div><i class="icon-time"></i>Coming Soon</div></a>
+										<ul>
+											<li><a href="coming-soon.html"><div>Simple Layout</div></a></li>
+											<li><a href="coming-soon-2.html"><div>Parallax Image</div></a></li>
+											<li><a href="coming-soon-3.html"><div>HTML5 Video</div></a></li>
+										</ul>
+									</li>
+									<li><a href="profile.html"><div><i class="icon-user"></i>User Profile</div></a></li>
+								</ul>
+							</li>
+							<li class="mega-menu"><a href="#"><div>Courses</div></a>
+								<div class="mega-menu-content style-2 clearfix">
+									<ul class="mega-menu-column col-lg-3">
+										<li class="mega-menu-title"><a href="#"><div>Introduction</div></a>
+											<ul>
+												<li><a href="about.html"><div>About Us</div></a></li>
+												<li><a href="about-2.html"><div>About Us - Layout 2</div></a></li>
+												<li><a href="about-me.html"><div>About Me</div></a></li>
+												<li><a href="team.html"><div>Team Members</div></a></li>
+												<li><a href="jobs.html"><div>Careers</div></a></li>
+												<li><a href="side-navigation.html"><div>Side Navigation</div></a></li>
+												<li><a href="page-submenu.html"><div>Page Submenu</div></a></li>
+												<li><a href="sitemap.html"><div>Sitemap</div></a></li>
+											</ul>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-3">
+										<li class="mega-menu-title"><a href="#"><div>Utility</div></a>
+											<ul>
+												<li><a href="services.html"><div>Services - Layout 1</div></a></li>
+												<li><a href="services-2.html"><div>Services - Layout 2</div></a></li>
+												<li><a href="services-3.html"><div>Services - Layout 3</div></a></li>
+												<li><a href="faqs.html"><div>FAQs - Layout 1</div></a></li>
+												<li><a href="faqs-2.html"><div>FAQs - Layout 2</div></a></li>
+												<li><a href="faqs-3.html"><div>FAQs - Layout 3</div></a></li>
+												<li><a href="faqs-4.html"><div>FAQs - Layout 4</div></a></li>
+												<li><a href="maintenance.html"><div>Maintenance Page</div></a></li>
+											</ul>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-3">
+										<li class="mega-menu-title"><a href="#"><div>Layout Grids</div></a>
+											<ul>
+												<li><a href="full-width.html"><div>Full Width</div></a></li>
+												<li><a href="full-width-wide.html"><div>Full Width - Wide</div></a></li>
+												<li><a href="right-sidebar.html"><div>Right Sidebar</div></a></li>
+												<li><a href="left-sidebar.html"><div>Left Sidebar</div></a></li>
+												<li><a href="both-sidebar.html"><div>Both Sidebar</div></a></li>
+												<li><a href="both-right-sidebar.html"><div>Both Right Sidebar</div></a></li>
+												<li><a href="both-left-sidebar.html"><div>Both Left Sidebar</div></a></li>
+												<li><a href="blank-page.html"><div>Blank Page</div></a></li>
+											</ul>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-3">
+										<li class="mega-menu-title"><a href="#"><div>Miscellaneous</div></a>
+											<ul>
+												<li><a href="login-register.html"><div>Login/Register</div></a></li>
+												<li><a href="login-register-2.html"><div>Login/Register - Style 2</div></a></li>
+												<li><a href="login-register-3.html"><div>Login/Register - Style 3</div></a></li>
+												<li><a href="login-1.html"><div>Login - Style 1</div></a></li>
+												<li><a href="login-2.html"><div>Login - Style 2</div></a></li>
+												<li><a href="404.html"><div>404 - Simple Layout</div></a></li>
+												<li><a href="404-2.html"><div>404 - Parallax Image</div></a></li>
+												<li><a href="404-3.html"><div>404 - HTML5 Video</div></a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="mega-menu"><a href="#"><div>Events</div></a>
+								<div class="mega-menu-content style-2 clearfix">
+									<ul class="mega-menu-column col-5">
+										<li class="mega-menu-title"><a href="#"><div>Grids</div></a>
+											<ul>
+												<li><a href="Event"><div>Register for an event</div></a></li>
+												<li><a href="portfolio-2.html"><div>2 Columns</div></a></li>
+												<li><a href="portfolio-3.html"><div>3 Columns</div></a></li>
+												<li><a href="portfolio.html"><div>4 Columns</div></a></li>
+												<li><a href="portfolio-5.html"><div>5 Columns</div></a></li>
+												<li><a href="portfolio-6.html"><div>6 Columns</div></a></li>
+											</ul>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-5">
+										<li class="mega-menu-title"><a href="#"><div>Masonry</div></a>
+											<ul>
+												<li><a href="portfolio-mixed-masonry.html"><div>Mixed Columns</div></a></li>
+												<li><a href="portfolio-2-masonry.html"><div>2 Columns</div></a></li>
+												<li><a href="portfolio-3-masonry.html"><div>3 Columns</div></a></li>
+												<li><a href="portfolio-masonry.html"><div>4 Columns</div></a></li>
+												<li><a href="portfolio-5-masonry.html"><div>5 Columns</div></a></li>
+												<li><a href="portfolio-6-masonry.html"><div>6 Columns</div></a></li>
+											</ul>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-5">
+										<li class="mega-menu-title"><a href="#"><div>Loading Styles</div></a>
+											<ul>
+												<li><a href="portfolio.html"><div>jQuery Filter</div></a></li>
+												<li><a href="portfolio-jpagination.html"><div>jQuery Pagination</div></a></li>
+												<li><a href="portfolio-infinity-scroll.html"><div>Infinity Scroll</div></a></li>
+												<li><a href="portfolio-ajax.html"><div>AJAX In Page</div></a></li>
+												<li><a href="portfolio-ajax-in-modal.html"><div>AJAX In Modal</div></a></li>
+												<li><a href="portfolio-filter-styles.html"><div>Filter Styles</div></a></li>
+											</ul>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-5">
+										<li class="mega-menu-title"><a href="#"><div>Single Project</div></a>
+											<ul>
+												<li><a href="portfolio-single-extended.html"><div>Extended Item</div></a></li>
+												<li><a href="portfolio-single-fullwidth.html"><div>Parallax Image</div></a></li>
+												<li><a href="portfolio-single-gallery-full.html"><div>Slider Gallery</div></a></li>
+												<li><a href="portfolio-single-video-fullwidth-left-sidebar.html"><div>HTML5 Video</div></a></li>
+												<li><a href="portfolio-single-thumbs-right-sidebar.html"><div>Masonry Thumbs</div></a></li>
+												<li><a href="portfolio-single-video-both-sidebar.html"><div>Embed Video</div></a></li>
+											</ul>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-5">
+										<li class="mega-menu-title"><a href="#"><div>Layouts</div></a>
+											<ul>
+												<li><a href="portfolio-nomargin.html"><div>Default</div></a></li>
+												<li><a href="portfolio-1-alt-right-sidebar.html"><div>Right Sidebar</div></a></li>
+												<li><a href="portfolio-3-left-sidebar.html"><div>Left Sidebar</div></a></li>
+												<li><a href="portfolio-2-both-sidebar.html"><div>Both Sidebar</div></a></li>
+												<li><a href="portfolio-fullwidth-notitle.html"><div>100% Width</div></a></li>
+												<li><a href="portfolio-parallax.html"><div>Parallax</div></a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="mega-menu"><a href="#"><div>News</div></a>
+								<div class="mega-menu-content style-2 clearfix">
+									<ul class="mega-menu-column col-lg-3">
+										<li class="mega-menu-title"><a href="#"><div>Default</div></a>
+											<ul>
+												<li><a href="blog.html"><div>Right Sidebar</div></a></li>
+												<li><a href="blog-left-sidebar.html"><div>Left Sidebar</div></a></li>
+												<li><a href="blog-both-sidebar.html"><div>Both Sidebar</div></a></li>
+												<li><a href="blog-full-width.html"><div>Full Width</div></a></li>
+											</ul>
+										</li>
+										<li class="mega-menu-title"><a href="#"><div>Timeline</div></a>
+											<ul>
+												<li><a href="blog-timeline-right-sidebar.html"><div>Right Sidebar</div></a></li>
+												<li><a href="blog-timeline-left-sidebar.html"><div>Left Sidebar</div></a></li>
+												<li><a href="blog-timeline.html"><div>Full Width</div></a></li>
+											</ul>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-3">
+										<li class="mega-menu-title"><a href="#"><div>Masonry</div></a>
+											<ul>
+												<li><a href="blog-masonry.html"><div>4 Columns</div></a></li>
+												<li><a href="blog-masonry-3.html"><div>3 Columns</div></a></li>
+												<li><a href="blog-masonry-2.html"><div>2 Columns</div></a></li>
+												<li><a href="blog-masonry-full.html"><div>100% Width</div></a></li>
+											</ul>
+										</li>
+										<li class="mega-menu-title"><a href="#"><div>Grid</div></a>
+											<ul>
+												<li><a href="blog-grid.html"><div>4 Columns</div></a></li>
+												<li><a href="blog-grid-3.html"><div>3 Columns</div></a></li>
+												<li><a href="blog-grid-2.html"><div>2 Columns</div></a></li>
+											</ul>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-3">
+										<li class="mega-menu-title"><a href="#"><div>Small Thumbs</div></a>
+											<ul>
+												<li><a href="blog-small-left-sidebar.html"><div>Left Sidebar</div></a></li>
+												<li><a href="blog-small.html"><div>Right Sidebar</div></a></li>
+												<li><a href="blog-small-both-sidebar.html"><div>Both Sidebar</div></a></li>
+												<li><a href="blog-small-full-width.html"><div>Full Width</div></a></li>
+												<li><a href="blog-small-alt.html"><div>Alternate Layout</div></a></li>
+											</ul>
+										</li>
+										<li class="mega-menu-title"><a href="#"><div>Item Splitting</div></a>
+											<ul>
+												<li><a href="blog-grid.html"><div>Pagination</div></a></li>
+												<li><a href="blog-masonry.html"><div>Infinite Scroll</div></a></li>
+											</ul>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-3">
+										<li class="mega-menu-title"><a href="#"><div>Single</div></a>
+											<ul>
+												<li><a href="blog-single.html"><div>Default Layout</div></a></li>
+												<li><a href="blog-single-left-sidebar.html"><div>Left Sidebar</div></a></li>
+												<li><a href="blog-single-full.html"><div>Full Width</div></a></li>
+												<li><a href="blog-single-small.html"><div>Small Image</div></a></li>
+												<li><a href="blog-single-split-right-sidebar.html"><div>Split Layout</div></a></li>
+											</ul>
+										</li>
+										<li class="mega-menu-title"><a href="#"><div>Comments Module</div></a>
+											<ul>
+												<li><a href="blog-single-left-sidebar.html#comments"><div>Facebook Comments</div></a></li>
+												<li><a href="blog-single-small.html#comments"><div>Disqus Comments</div></a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="shop.html"><div>Shop</div></a>
+								<ul>
+									<li><a href="shop.html"><div>4 Columns</div></a></li>
+									<li><a href="shop-3.html"><div>3 Columns</div></a>
+										<ul>
+											<li><a href="shop-3.html"><div>Full Width</div></a></li>
+											<li><a href="shop-3-right-sidebar.html"><div>Right Sidebar</div></a></li>
+											<li><a href="shop-3-left-sidebar.html"><div>Left Sidebar</div></a></li>
+										</ul>
+									</li>
+									<li><a href="shop-2.html"><div>2 Columns</div></a>
+										<ul>
+											<li><a href="shop-2-right-sidebar.html"><div>Right Sidebar</div></a></li>
+											<li><a href="shop-2-left-sidebar.html"><div>Left Sidebar</div></a></li>
+											<li><a href="shop-2-both-sidebar.html"><div>Both Sidebar</div></a></li>
+										</ul>
+									</li>
+									<li><a href="shop-1.html"><div>1 Columns</div></a>
+										<ul>
+											<li><a href="shop-1.html"><div>Full Width</div></a></li>
+											<li><a href="shop-1-right-sidebar.html"><div>Right Sidebar</div></a></li>
+											<li><a href="shop-1-left-sidebar.html"><div>Left Sidebar</div></a></li>
+											<li><a href="shop-1-both-sidebar.html"><div>Both Sidebar</div></a></li>
+										</ul>
+									</li>
+									<li><a href="shop-category-parallax.html"><div>Categories - Parallax</div></a></li>
+									<li><a href="shop-combination-filter.html"><div>Combination Filter</div></a></li>
+									<li><a href="shop-single.html"><div>Single Product</div></a>
+										<ul>
+											<li><a href="shop-single.html"><div>Full Width</div></a></li>
+											<li><a href="shop-single-right-sidebar.html"><div>Right Sidebar</div></a></li>
+											<li><a href="shop-single-left-sidebar.html"><div>Left Sidebar</div></a></li>
+											<li><a href="shop-single-both-sidebar.html"><div>Both Sidebar</div></a></li>
+										</ul>
+									</li>
+									<li><a href="cart.html"><div>Cart</div></a></li>
+									<li><a href="checkout.html"><div>Checkout</div></a></li>
+								</ul>
+							</li>
+							<li class="mega-menu"><a href="#"><div>Shortcodes</div></a>
+								<div class="mega-menu-content clearfix">
+									<ul class="mega-menu-column col-5">
+										<li><a href="animations.html"><div><i class="icon-magic"></i>Animations</div></a></li>
+										<li><a href="buttons.html"><div><i class="icon-link"></i>Buttons</div></a></li>
+										<li><a href="carousel.html"><div><i class="icon-heart3"></i>Carousel</div></a></li>
+										<li><a href="charts.html"><div><i class="icon-bar-chart"></i>Charts</div></a></li>
+										<li><a href="clients.html"><div><i class="icon-apple"></i>Clients</div></a></li>
+										<li><a href="columns-grids.html"><div><i class="icon-th-large"></i>Columns</div></a></li>
+										<li><a href="counters.html"><div><i class="icon-time"></i>Counters</div></a></li>
+										<li><a href="component-datatable.html"><div><i class="icon-table"></i>Data Tables</div></a></li>
+										<li><a href="component-datepicker.html"><div><i class="icon-calendar3"></i>Date &amp; Time Pickers</div></a></li>
+									</ul>
+									<ul class="mega-menu-column col-5">
+										<li><a href="dividers.html"><div><i class="icon-indent-right"></i>Dividers</div></a></li>
+										<li><a href="featured-boxes.html"><div><i class="icon-lightbulb"></i>Icon Boxes</div></a></li>
+										<li><a href="gallery.html"><div><i class="icon-picture"></i>Galleries</div></a></li>
+										<li><a href="headings-dropcaps.html"><div><i class="icon-pencil2"></i>Heading Styles</div></a></li>
+										<li><a href="icon-lists.html"><div><i class="icon-list-alt"></i>Icon Lists</div></a></li>
+										<li><a href="labels-badges.html"><div><i class="icon-plus-sign"></i>Labels</div></a></li>
+										<li><a href="lightbox.html"><div><i class="icon-resize-full"></i>Lightbox</div></a></li>
+										<li><a href="form-elements.html"><div><i class="icon-edit"></i>Form Elements</div></a></li>
+										<li><a href="component-uploads.html"><div><i class="icon-line-upload"></i>File Uploads</div></a></li>
+									</ul>
+									<ul class="mega-menu-column col-5">
+										<li><a href="lists-cards.html"><div><i class="icon-th-list"></i>Lists &amp; Cards</div></a></li>
+										<li><a href="maps.html"><div><i class="icon-map-marker2"></i>Maps</div></a></li>
+										<li><a href="media-embeds.html"><div><i class="icon-play"></i>Media Embeds</div></a></li>
+										<li><a href="modal-popovers.html"><div><i class="icon-move"></i>Modal Boxes</div></a></li>
+										<li><a href="navigation.html"><div><i class="icon-align-justify2"></i>Navigations</div></a></li>
+										<li><a href="pagination-progress.html"><div><i class="icon-cogs"></i>Pagination</div></a></li>
+										<li><a href="pie-skills.html"><div><i class="icon-tasks"></i>Pies &amp; Skills</div></a></li>
+										<li><a href="component-range-slider.html"><div><i class="icon-line-move"></i>Range Slider</div></a></li>
+										<li><a href="component-ratings.html"><div><i class="icon-star3"></i>Star Ratings</div></a></li>
+									</ul>
+									<ul class="mega-menu-column col-5">
+										<li><a href="pricing.html"><div><i class="icon-dollar"></i>Pricing Boxes</div></a></li>
+										<li><a href="process-steps.html"><div><i class="icon-thumbs-up"></i>Process Steps</div></a></li>
+										<li><a href="promo-boxes.html"><div><i class="icon-rocket"></i>Promo Boxes</div></a></li>
+										<li><a href="quotes-blockquotes.html"><div><i class="icon-quote-left"></i>Blockquotes</div></a></li>
+										<li><a href="responsive.html"><div><i class="icon-laptop2"></i>Responsive</div></a></li>
+										<li><a href="sections.html"><div><i class="icon-folder-open"></i>Sections</div></a></li>
+										<li><a href="social-icons.html"><div><i class="icon-facebook2"></i>Social Icons</div></a></li>
+										<li><a href="component-select-picker.html"><div><i class="icon-select"></i>Select Picker</div></a></li>
+										<li><a href="component-select-box.html"><div><i class="icon-line-columns"></i>Select Boxes</div></a></li>
+									</ul>
+									<ul class="mega-menu-column col-5">
+										<li><a href="style-boxes.html"><div><i class="icon-exclamation-sign"></i>Alert Boxes</div></a></li>
+										<li><a href="styled-icons.html"><div><i class="icon-flag2"></i>Styled Icons</div></a></li>
+										<li><a href="tables.html"><div><i class="icon-table"></i>Tables</div></a></li>
+										<li><a href="tabs.html"><div><i class="icon-star3"></i>Tabs</div></a></li>
+										<li><a href="testimonials-twitter.html"><div><i class="icon-user4"></i>Testimonials</div></a></li>
+										<li><a href="thumbnails-slider.html"><div><i class="icon-camera3"></i>Thumbnails</div></a></li>
+										<li><a href="toggles-accordions.html"><div><i class="icon-ok-circle"></i>Toggles</div></a></li>
+										<li><a href="component-radios-switches.html"><div><i class="icon-line-square-check"></i>Radios &amp; Switches</div></a></li>
+										<li><a href="flip-cards.html"><div><i class="icon-refresh"></i>Flip Cards</div></a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="#">EN</a>
+									<ul>
+										<li><a href="#"><img src="/coworking/images/fr.png" width ="30" height ="20" alt="French"> FR</a></li>
+										<li><a href="#"><img src="/coworking/images/ar.png" width ="30" height ="20" alt="Arabe"> AR</a></li>
+										<li><a href="#"><img src="/coworking/images/eng.png" width ="30" height ="20" alt="English"> EN</a></li>
+									</ul>
+								</li>
+							
+								
+						</ul>
+
+						<!-- Top Cart
+						============================================= -->
+						<div id="top-cart">
+							<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
+							<div class="top-cart-content">
+								<div class="top-cart-title">
+									<h4>Shopping Cart</h4>
+								</div>
+								<div class="top-cart-items">
+									<div class="top-cart-item clearfix">
+										<div class="top-cart-item-image">
+											<a href="#"><img src="{{asset('/coworking/images/java.png')}}" alt="Blue Round-Neck Tshirt" /></a>
+										</div>
+										<div class="top-cart-item-desc">
+											<a href="#">Cours Java</a>
+											<span class="top-cart-item-price">$19.99</span>
+											<span class="top-cart-item-quantity">x 2</span>
+										</div>
+									</div>
+									<div class="top-cart-item clearfix">
+										<div class="top-cart-item-image">
+											<a href="#"><img src="{{asset('/coworking/images/angular.png')}}" alt="Light Blue Denim Dress" /></a>
+										</div>
+										<div class="top-cart-item-desc">
+											<a href="#">Cours angular</a>
+											<span class="top-cart-item-price">$24.99</span>
+											<span class="top-cart-item-quantity">x 3</span>
+										</div>
+									</div>
+								</div>
+								<div class="top-cart-action clearfix">
+									<span class="fleft top-checkout-price">$114.95</span>
+									<button class="button button-3d button-small nomargin fright">View Cart</button>
+								</div>
+							</div>
+						</div><!-- #top-cart end -->
+						
+
+									
+
+						<!-- Top Search
+						============================================= -->
+						<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="search.html" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+							</form>
+						</div><!-- #top-search end -->
+						
+						
+<div class="modal1 mfp-hide" id="modal-register">
+			<div class="card divcenter" style="max-width: 540px;">
+				<div class="card-header py-3 nobg center">
+					<h3 class="mb-0 t400">ye marhbe ye marhbe </h3>
+				</div>
+				<div class="card-body divcenter py-5" style="max-width: 70%;">
+
+					<a href="#" class="button button-large btn-block si-colored si-facebook nott t400 ls0 center nomargin"><i class="icon-facebook-sign"></i> Log in with Facebook</a>
+					<a href="#" class="button button-large btn-block si-colored si-gmail nott t400 ls0 center nomargin"><i class="icon-google-plus-sign"></i> Log in with Gmail</a>
+					
+					
+					
+
+					<div class="divider divider-center"><span class="position-relative" style="top: -2px">OR</span></div>
+
+					<form id="login-form" name="login-form" class="nobottommargin row" action="#" method="post">
+
+						<div class="col-12">
+							<input type="text" id="login-form-username" name="login-form-username" value="" class="form-control not-dark" placeholder="Username" />
+						</div>
+
+						<div class="col-12 mt-4">
+							<input type="password" id="login-form-password" name="login-form-password" value="" class="form-control not-dark" placeholder="Password" />
+						</div>
+
+						<div class="col-12">
+							<a href="#" class="fright text-dark t300 mt-2">Forgot Password?</a>
+						</div>
+
+						<div class="col-12 mt-4">
+							<button class="button btn-block nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>
+						</div>
+					</form>
+				</div>
+				<div class="card-footer py-4 center">
+					<p class="mb-0">Don't have an account? <a href="Register"><u>Sign up</u></a></p>
+				</div>
+			</div>
+		</div>
+<div id="top-account">
+							<a href="#modal-register" data-lightbox="inline" ><i class="icon-line2-user mr-1 position-relative" style="top: 1px;"></i><span class="d-none d-sm-inline-block font-primary t500">Login</span></a>
+						</div>
+
+					</nav><!-- #primary-menu end -->
+
+
+				</div>
+			
+
+
+			</div>
+
+
+		</header><!-- #header end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap pt-3 pb-0">
+
+				<div class="section nobg py-2">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-7">
+								<h2 class="display-4 t600 ls--2">We are making better <span class="text-rotater" data-separator="|" data-rotate="fadeIn" data-speed="2000">
+									<span class="t-rotate">Environment|Workspace|CoWorking|Community</span>
+								</span> for you.</h2>
+							</div>
+							<div class="col-md-5">
+								<p class="lead text-muted">
+									Collaboratively coordinate adaptive synergy with compelling "outside the box" thinking. Continually recaptiualize user friendly sources whereas leveraged.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="ohidden parallax d-flex align-items-center" data-bottom-top="background-position:0px 200px;" data-top-bottom="background-position:0px -400px;" style="background-image: url('/coworking/images/hero.jpg'); background-size: cover; height: 600px; width: 100%;">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+								<h2 class="text-white">The Center is a network of 9 workspaces, from 200 to 3,700 sqft, Build and Designed to support Personal and Businesses in the Creative World.</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-theme-light">
+					<div class="shadow-sm hero-features bgcolor dark shadow">
+						<div class="row">
+							<div class="col-md-4 mt-3 mt-md-0">
+								<div class="feature-box fbox-plain fbox-small fbox-dark  mb-0">
+									<div class="fbox-icon">
+										<i class="icon-line-circle-check"></i>
+									</div>
+									<h3 class="text-white">Easily Manage Your Works</h3>
+									<p class="text-white mb-0">24x7 available, Anytime & anywhere, we're always available for You.</p>
+								</div>
+							</div>
+
+							<div class="col-md-4 mt-3 mt-md-0">
+								<div class="feature-box fbox-plain fbox-small fbox-dark mb-0">
+									<div class="fbox-icon">
+										<i class="icon-line-circle-check"></i>
+									</div>
+									<h3 class="text-white">24x7 Access.</h3>
+									<p class="text-white mb-0">Get Started with our Regular, Weekly, Monthly Plan.</p>
+								</div>
+							</div>
+
+							<div class="col-md-4 mt-3 mt-md-0">
+								<div class="feature-box fbox-plain fbox-small fbox-dark mb-0">
+									<div class="fbox-icon">
+										<i class="icon-line-circle-check"></i>
+									</div>
+									<h3 class="text-white">Secured &amp; Friendly.</h3>
+									<p class="text-white mb-0">Intrinsicly evisculate quality vectors befor high-impact schemas.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="section mt-0 pt-md-5 pt-0">
+					<div class="container clearfix">
+						<div class="row align-items-md-center mb-5">
+							<div class="col-md-6 pr-5">
+								<div class="heading-block mb-4 nobottomborder">
+									<div class="before-heading">Know More</div>
+									<h2 class="nott t600">Work Together, Build Together.</h2>
+								</div>
+								<div class="row">
+									<div class="col-6 col-sm-6 mb-4">
+										<div class="counter color t600"><span data-from="1" data-to="3" data-refresh-interval="2" data-speed="600"></span>+</div>
+										<h5 class="mt-0 t500">Branches</h5>
+									</div>
+
+									<div class="col-6 col-sm-6 mb-4">
+										<div class="counter color t600"><span data-from="1" data-to="37" data-refresh-interval="11" data-speed="900"></span>+</div>
+										<h5 class="mt-0 t500">Single Studios</h5>
+									</div>
+
+									<div class="col-6 col-sm-6 mb-4">
+										<div class="counter color t600"><span data-from="1" data-to="21" data-refresh-interval="3" data-speed="1000"></span>+</div>
+										<h5 class="mt-0 t500">Events per Month</h5>
+									</div>
+
+									<div class="col-6 col-sm-6 mb-4">
+										<div class="counter color t600"><span data-from="100" data-to="4500" data-refresh-interval="100" data-speed="1500"></span>+</div>
+										<h5 class="mt-0 t500">Active Members</h5>
+									</div>
+								</div>
+								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda praesentium eius, similique reprehenderit ab voluptatibus eaque.</p>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="card shadow-sm border-light">
+									<img src="/coworking/images/features/3.jpg" alt="Featured image 1" class="card-img-top">
+									<div class="card-body">
+										<h5 class="card-title t600 color">Meeting Rooms</h5>
+										<p class="card-text">Some quick example text to build on the card title.</p>
+									</div>
+								</div>
+								<div class="card shadow-sm border-light mt-4">
+									<img src="/coworking/images/features/2.jpg" alt="Featured image 2" class="card-img-top">
+									<div class="card-body">
+										<h5 class="card-title t600 color">Private Rooms</h5>
+										<p class="card-text">Some quick example text. similique reprehenderit ab voluptatibus eaque.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 pl-sm-3 mt-3 mt-sm-0">
+								<div class="card shadow-sm border-light">
+									<img src="/coworking/images/features/1.jpg" alt="Featured image 3" class="card-img-top">
+									<div class="card-body">
+										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+
+					<div class="row justify-content-between">
+
+						<!-- Feature Box
+						============================================= -->
+						<div class="col-lg-4 col-md-6 my-4">
+							<i class="icon-wifi-full color ml-0 mb-4 i-plain d-block fnone"></i>
+							<h4 class="mb-3">Fiber Optic WiFi</h4>
+							<p class="text-muted">Add any Field to your Custom Form. Canvas's inbuilt Forms Processor will handle the rest. You will never have to touch any PHP Codes.</p>
+						</div>
+
+						<!-- Feature Box
+						============================================= -->
+						<div class="col-lg-4 col-md-6 my-4">
+							<i class="icon-line2-cup color ml-0 mb-3 i-plain d-block fnone"></i>
+							<h4 class="mb-3">Cafeteria</h4>
+							<p class="text-muted">Add any Field to your Custom Form. Canvas's inbuilt Forms Processor will handle the rest. You will never have to touch any PHP Codes.</p>
+						</div>
+
+						<!-- Feature Box
+						============================================= -->
+						<div class="col-lg-4 col-md-6 my-4">
+							<i class="icon-line2-screen-desktop color ml-0 mb-3 i-plain d-block fnone"></i>
+							<h4 class="mb-3">Flexible Desks</h4>
+							<p class="text-muted">Add any Field to your Custom Form. Canvas's inbuilt Forms Processor will handle the rest. You will never have to touch any PHP Codes.</p>
+						</div>
+
+						<!-- Feature Box
+						============================================= -->
+						<div class="col-lg-4 col-md-6 my-4">
+							<i class="icon-line2-lock color ml-0 mb-3 i-plain d-block fnone"></i>
+							<h4 class="mb-3">Lockers</h4>
+							<p class="text-muted">Add any Field to your Custom Form. Canvas's inbuilt Forms Processor will handle the rest. You will never have to touch any PHP Codes.</p>
+						</div>
+
+						<!-- Feature Box
+						============================================= -->
+						<div class="col-lg-4 col-md-6 my-4">
+							<i class="icon-fingerprint color ml-0 mb-3 i-plain d-block fnone"></i>
+							<h4 class="mb-3">100% Secure</h4>
+							<p class="text-muted">Add any Field to your Custom Form. Canvas's inbuilt Forms Processor will handle the rest. You will never have to touch any PHP Codes.</p>
+						</div>
+
+						<!-- Feature Box
+						============================================= -->
+						<div class="col-lg-4 col-md-6 my-4">
+							<i class="icon-line2-printer color ml-0 mb-3 i-plain d-block fnone"></i>
+							<h4 class="mb-3">Printers &amp; Fax</h4>
+							<p class="text-muted">Add any Field to your Custom Form. Canvas's inbuilt Forms Processor will handle the rest. You will never have to touch any PHP Codes.</p>
+						</div>
+
+						<!-- Feature Box
+						============================================= -->
+						<div class="col-lg-4 col-md-6 my-4">
+							<i class="icon-couch color ml-0 mb-3 i-plain d-block fnone"></i>
+							<h4 class="mb-3">Common Area</h4>
+							<p class="text-muted">Add any Field to your Custom Form. Canvas's inbuilt Forms Processor will handle the rest. You will never have to touch any PHP Codes.</p>
+						</div>
+
+						<!-- Feature Box
+						============================================= -->
+						<div class="col-lg-4 col-md-6 my-4">
+							<i class="icon-line-clock color ml-0 mb-3 i-plain d-block fnone"></i>
+							<h4 class="mb-3">24x7 Access</h4>
+							<p class="text-muted">Add any Field to your Custom Form. Canvas's inbuilt Forms Processor will handle the rest. You will never have to touch any PHP Codes.</p>
+						</div>
+
+						<!-- Feature Box
+						============================================= -->
+						<div class="col-lg-4 col-md-6 my-4">
+							<i class="icon-playstation color ml-0 mb-3 i-plain d-block fnone"></i>
+							<h4 class="mb-3">Other Activities</h4>
+							<p class="text-muted">Add any Field to your Custom Form. Canvas's inbuilt Forms Processor will handle the rest. You will never have to touch any PHP Codes.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="section" style="padding: 80px 0">
+					<div class="container">
+						<div class="heading-block nobottomborder mb-0">
+							<div class="before-heading">Select your Plan</div>
+							<h2 class="nott t600 mb-0">Membership</h2>
+						</div>
+					</div>
+
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div id="price-carousel" class="owl-carousel carousel-widget" data-margin="30" data-nav="false" data-pagi="true" data-items-xs="1" data-items-sm="1" data-items-md="2" data-items-lg="3" data-items-xl="3">
+
+									<div class="price-list shadow-sm card border-0 rounded">
+										<div class="position-relative">
+											<img src="/coworking/images/membership/1-day.jpg" alt="Featured image 1" class="card-img-top rounded-top">
+											<div class="card-img-overlay dark d-flex justify-content-center flex-column p-0 center">
+												<h3 class="card-title mb-0 text-white">Day Pass</h3>
+												<p class="card-text mb-0">Give it a Try</p>
+											</div>
+										</div>
+										<div class="card-body">
+
+											<div class="price-title pb-3">$19<small>Per Day</small></div>
+
+											<ul class="list-group list-group-flush mb-4">
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> Day Access Only</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> Unlimited Superfast Wi-Fi</li>
+											  <li class="list-group-item pl-0 text-black-50"><i class="icon-line-check pr-3 color"></i> <del>No lockers</del></li>
+											</ul>
+
+											<a href="Register" class="button button-rounded button-large btn-block m-0 center t500">Sign Up</a>
+
+										</div>
+									</div>
+
+									<div class="price-list shadow-sm card border-0 rounded">
+										<div class="position-relative">
+											<img src="/coworking/images/membership/share.jpg" alt="Featured image 1" class="card-img-top rounded-top">
+											<div class="card-img-overlay dark d-flex justify-content-center flex-column p-0 center">
+												<h3 class="card-title mb-0 text-white">Shared Desk</h3>
+												<p class="card-text mb-0">Economical but Flexible</p>
+											</div>
+										</div>
+										<div class="card-body">
+
+											<div class="price-title pb-3">$99<small>Monthly</small></div>
+
+											<ul class="list-group list-group-flush mb-4">
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> 8am to 8pm Access</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> 100 hours of Superfast Wi-Fi</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> Lockers Access</li>
+											  <li class="list-group-item pl-0 text-black-50"><i class="icon-line-check pr-3 color"></i> <del>No Printers</del></li>
+											</ul>
+
+											<a href="Register" class="button button-rounded button-large btn-block m-0 center t500">Sign Up</a>
+
+										</div>
+									</div>
+
+									<div class="price-list shadow-sm card border-0 rounded">
+										<div class="position-relative">
+											<img src="/coworking/images/membership/flexible.jpg" alt="Featured image 1" class="card-img-top rounded-top">
+											<div class="card-img-overlay dark d-flex justify-content-center flex-column p-0 center">
+												<h3 class="card-title mb-0 text-white">Flexible Desk</h3>
+											<p class="card-text mb-0">Any Desk, Any Chair</p>
+											</div>
+										</div>
+										<div class="card-body">
+
+											<div class="price-title pb-3">$149<small>Monthly</small></div>
+
+											<ul class="list-group list-group-flush mb-4">
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> 200 hours of WIFI per Month</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> Lockers Access</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> 50 pages Printers</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> 5hrs Skype Booth</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> Mailing Address</li>
+											</ul>
+
+											<a href="Register" class="button button-rounded button-large btn-block m-0 center t500">Sign Up</a>
+
+										</div>
+									</div>
+
+									<div class="price-list shadow-sm card border-0 rounded">
+										<div class="position-relative">
+											<img src="/coworking/images/membership/private.jpg" alt="Featured image 1" class="card-img-top rounded-top">
+											<div class="card-img-overlay dark d-flex justify-content-center flex-column p-0 center">
+												<h3 class="card-title mb-0 text-white">Private Desk</h3>
+											<p class="card-text mb-0">Its all Yours!</p>
+											</div>
+										</div>
+										<div class="card-body">
+
+											<div class="price-title pb-3">$249<small>Monthly</small></div>
+
+											<ul class="list-group list-group-flush mb-4">
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> Private Desk + Locker</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> 500 hours of WIFI per Month</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> Meeting Room Access</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> Unlimited Printers</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> Unlimited Skype Booth</li>
+											  <li class="list-group-item pl-0"><i class="icon-line-check pr-3 color"></i> Mailing Address</li>
+											</ul>
+
+											<a href="Register" class="button button-rounded button-large btn-block m-0 center t500">Sign Up</a>
+
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="col-md-11 mt-5 offset-md-1">
+								<h3>Terms &amp; Conditions</h3>
+								<ul class="pl-4 mb-0">
+									<li class="mb-1">Hours indicated are access to the space NOT the WIFI or Internet Connection.</li>
+									<li class="mb-1">Payment is upfront. We accept Cash and VISA/Master Cards, 2% Credit Card surcharge applies.</li>
+									<li class="mb-1">Monthly Plan starts from the point of signup for 30 days.</li>
+									<li class="mb-1">Sorry NO Pausing Memberships and NO Cancellations.</li>
+									<li class="mb-1">Sorry NO Upgrading Plans you need to use the hours in the plan.</li>
+									<li class="mb-1">If you run out of hours you can buy additional hours at the rate above, through our website or front desk.</li>
+									<li class="mb-1">If you wish to change plan once you’re on a plan this is done only at the end of the month or once you use your hours.</li>
+									<li class="mb-1">Additional Printing is charged at &dollar;0.30 for Black and White A4 & A3 and &dollar;2 for Colour A4 & A3.</li>
+									<li class="mb-1">Skype Booths must be booked before 1 day &amp; the keys can be collected at the frontdesk. Additional Skype Booth usage will be charged at &dollar;5 per hour.</li>
+									<li class="mb-1">Storage Lockers are first come first serve and are subject to availability.</li>
+									<li class="mb-1">Additional Charge for Mail Delivery.</li>
+									<li class="mb-1">Pets are not allowed.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="section clearfix nobg">
+					<div class="container">
+						<div class="heading-block nobottomborder center">
+							<div class="before-heading">Some Of Gallery Pictures</div>
+							<h2 class="nott t600 mb-0">Gallery</h2>
+						</div>
+					</div>
+					<div id="image-carousel" class="owl-carousel carousel-widget" data-margin="24" data-nav="true" data-pagi="true" data-items-xs="1" data-items-sm="1" data-items-md="1" data-items-lg="2" data-items-xl="2" style="padding: 0 20px" data-lightbox="gallery">
+						<div class="slide slide--1">
+							<div class="carousel-column-container">
+								<ul class="carousel-column column-1">
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/1.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/1.jpg');"></a>
+									</li>
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/2.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/2.jpg');"></a>
+									</li>
+								</ul>
+								<ul class="carousel-column column-2">
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/3.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/3.jpg'); min-height: 300px"></a>
+									</li>
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/4.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/4.jpg'); min-height: 280px"></a>
+									</li>
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/5.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/5.jpg'); min-height: 200px"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="slide slide--2">
+							<div class="carousel-column-container">
+								<ul class="carousel-column column-1">
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/6.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/6.jpg'); min-height: 324px"></a>
+									</li>
+									<li class="carousel-grid-item">
+										<div class="item bgcolor d-flex align-items-center px-4" style="min-height: 480px">
+											<blockquote class="blockquote border-0 mb-0">
+												<p class="mb-3 text-white">"The Spirit of CoWorking Allows You to Find CoWorkers Who're Worth Working with."</p>
+												<footer class="blockquote-footer text-white-50 font-italic">Cynthia Chiam</footer>
+											</blockquote>
+										</div>
+									</li>
+								</ul>
+								<ul class="carousel-column column-2">
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/8.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/8.jpg');"></a>
+									</li>
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/9.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/9.jpg');"></a>
+									</li>
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/10.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/10.jpg');"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="slide slide--3">
+							<div class="carousel-column-container">
+								<ul class="carousel-column column-1">
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/11.jpg" data-lightbox="gallery-item" class="item bgcolor d-flex align-items-center px-4 img-overlay" style="background-image: url('/coworking/images/gallery/11.jpg'); min-height: 350px">
+											<blockquote class="blockquote border-0 mb-0">
+												<p class="mb-3 text-white">"I Belive in Collaboration Rather Than Competition"</p>
+												<footer class="blockquote-footer text-white-50 font-italic">Cynthia Chiam</footer>
+											</blockquote>
+										</a>
+									</li>
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/12.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/12.jpg'); min-height: 453px"></a>
+									</li>
+								</ul>
+								<ul class="carousel-column column-2">
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/13.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/13.jpg');"></a>
+									</li>
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/14.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/14.jpg');"></a>
+									</li>
+									<li class="carousel-grid-item">
+										<a href="/coworking/images/gallery/15.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/15.jpg');"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="section p-0 testimonials clearfix">
+					<div class="container" style="padding: 120px 0">
+						<div class="heading-block nobottomborder center">
+							<div class="before-heading">What our Members Say</div>
+							<h2 class="nott t600">Testimonials</h2>
+							<p class="mb-0 mt-1"><span class="t600">Excellent, 9.6</span> out of 10 based on <span class="t600">2,118</span> reviews. </p>
+						</div>
+
+						<div id="testimonials-carousel" class="owl-carousel carousel-widget testimonial testimonial-full nobgcolor noborder noshadow nopadding divcenter tleft clearfix" data-animate-in="fadeIn" data-animate-out="fadeOut" data-margin="24" data-nav="false" data-pagi="true" data-items="1" style="max-width: 740px">
+							<div class="slide">
+								<div class="testi-content">
+									<div class="testi-stars mb-4">
+										<i class="icon-star3"></i>
+										<i class="icon-star3"></i>
+										<i class="icon-star3"></i>
+										<i class="icon-star3"></i>
+										<i class="icon-star3"></i>
+									</div>
+									<p>Collaboratively enhance intermandated innovation via cutting-edge core competencies. Professionally extend covalent e-markets and mission-critical communities. Dramatically communicate revolutionary web services for interactive synergy. Synergistically.</p>
+									<div class="testi-meta mt-4">
+										Steve Jobs
+										<span class="ls0">Apple Inc.</span>
+									</div>
+								</div>
+							</div>
+							<div class="slide">
+								<div class="testi-content">
+									<div class="testi-stars mb-4">
+										<i class="icon-star3"></i>
+										<i class="icon-star3"></i>
+										<i class="icon-star3"></i>
+										<i class="icon-star3"></i>
+										<i class="icon-star-half2"></i>
+									</div>
+									<p>Intrinsicly synergize excellent content whereas user friendly action items. Rapidiously transition multimedia based information after top-line alignments. Authoritatively integrate accurate outsourcing vis-a-vis principle-centered systems energistically</p>
+									<div class="testi-meta mt-4">
+										Collis Ta'eed
+										<span class="ls0">Envato Inc.</span>
+									</div>
+								</div>
+							</div>
+							<div class="slide">
+								<div class="testi-content">
+									<div class="testi-stars mb-4">
+										<i class="icon-star3"></i>
+										<i class="icon-star3"></i>
+										<i class="icon-star3"></i>
+										<i class="icon-star3"></i>
+									</div>
+									<p>Compellingly engage multimedia based niche markets via value-added manufactured products. Competently formulate goal-oriented content for installed base users. Uniquely leverage other's granular ROI without 24/365 collaboration and idea-sharing.</p>
+									<div class="testi-meta mt-4">
+										John Doe
+										<span class="ls0">XYZ Inc.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="section nobg clearfix" style="padding: 80px 0">
+					<div class="container">
+						<div class="row justify-content-between align-items-center">
+							<div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 bottommargin-lg">
+								<a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" data-lightbox="iframe" class="play-video position-relative"><img src="/coworking/images/video-bg.jpg" alt="Video Image" class="rounded-lg shadow-lg">
+									<i class="icon-play"></i>
+								</a>
+							</div>
+							<div class="col-lg-5 col-md-6 mt-0 mt-md-4">
+								<div class="feature-box fbox-plain fbox-small">
+									<div class="fbox-icon">
+										<i class="icon-line2-magic-wand"></i>
+									</div>
+									<h3>Easily Manage Your Works</h3>
+									<p>Quickly impact virtual testing procedures vis-a-vis viral e-commerce. Completely myocardinate seamless.</p>
+								</div>
+
+								<div class="feature-box fbox-plain fbox-small">
+									<div class="fbox-icon">
+										<i class="icon-line2-clock"></i>
+									</div>
+									<h3>24x7 Access</h3>
+									<p>Authoritatively create one-to-one relationships for B2B "outside the box" thinking. Dramatically seize.</p>
+								</div>
+
+								<div class="feature-box fbox-plain fbox-small mb-0">
+									<div class="fbox-icon">
+										<i class="icon-line2-speech"></i>
+									</div>
+									<h3>Great Community</h3>
+									<p>Proactively evolve user-centric paradigms rather than exceptional core. Authoritatively brand unique.</p>
+								</div>
+							</div>
+
+							<div class="col-lg-5 col-md-6 mt-5 mt-md-0">
+								<h2 class="ls0">Get One Day Free Trial.</h2>
+								<p class="text-muted mb-5" style="font-size: 18px;">Enthusiastically embrace diverse e-markets after sustainable applications. Collaboratively impact intermandated systems vis-a-vis progressive information.</p>
+								<div class="d-flex">
+									<a href="Register" class="button button-rounded button-xlarge d-block flex-fill m-0 center nott t600 ls0">Sign Up</a>
+									<a href="#" class="button button-rounded button-xlarge d-block flex-fill button-border m-0 ml-3 center nott t600 ls0">Contact Us</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="line"></div>
+
+				<div class="section p-0 nobg clearfix">
+					<div class="container">
+						<div class="row mb-2">
+							<div class="col-lg-6 col-md-4">
+								<div class="heading-block nobottomborder mb-4">
+									<div class="before-heading">How do you Contact Us</div>
+									<h2 class="nott t600">Locations</h2>
+								</div>
+							</div>
+
+							<div class="col-lg-6 col-md-8">
+								<div class="row">
+									<div class="col-sm-4 col-3">
+										<div class="counter color t600"><span data-from="1" data-to="3" data-refresh-interval="2" data-speed="600"></span>+</div>
+										<h5 class="mt-0 t500">Branches</h5>
+									</div>
+
+									<div class="col-sm-4 col-6">
+										<div class="counter color t600"><span data-from="100" data-to="4500" data-refresh-interval="100" data-speed="1500"></span>+</div>
+											<h5 class="mt-0 t500">Active Members</h5>
+									</div>
+
+									<div class="col-sm-4 col-3">
+										<div class="counter color t600"><span data-from="2" data-to="100" data-refresh-interval="30" data-speed="1500"></span>%</div>
+											<h5 class="mt-0 t500">Secured</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="locations-carousel" class="owl-carousel carousel-widget owl-carousel-full clearfix" data-animate-in="fadeIn" data-animate-out="fadeOut" data-speed="200" data-margin="0" data-nav="true" data-pagi="true" data-items="1">
+						<div>
+							<div class="masonry-thumbs grid-5" data-big="2" data-lightbox="gallery">
+								<a href="/coworking/images/location/thumbs/full/1.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/1.jpg" alt="Gallery Thumb 1"></a>
+								<a href="#"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835253572242!2d144.95373531531297!3d-37.817327679751735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sin!4v1554124945593!5m2!1sen!2sin" width="500" height="334" allowfullscreen  style="border:0;"></iframe></a>
+								<a href="/coworking/images/location/thumbs/full/2.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/2.jpg" alt="Gallery Thumb 12"></a>
+								<a href="/coworking/images/location/thumbs/full/3.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/3.jpg" alt="Gallery Thumb 3"></a>
+								<a href="/coworking/images/location/thumbs/full/4.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/4.jpg" alt="Gallery Thumb 4"></a>
+								<a href="/coworking/images/location/thumbs/full/5.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/5.jpg" alt="Gallery Thumb 5"></a>
+								<a href="/coworking/images/location/thumbs/full/6.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/6.jpg" alt="Gallery Thumb 6"></a>
+								<a href="/coworking/images/location/thumbs/full/7.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/7.jpg" alt="Gallery Thumb 7"></a>
+								<a href="/coworking/images/location/thumbs/full/8.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/8.jpg" alt="Gallery Thumb 13"></a>
+								<a href="/coworking/images/location/thumbs/full/9.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/9.jpg" alt="Gallery Thumb 6"></a>
+								<a href="/coworking/images/location/thumbs/full/10.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/10.jpg" alt="Gallery Thumb 7"></a>
+								<a href="/coworking/images/location/thumbs/full/11.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/11.jpg" alt="Gallery Thumb 12"></a>
+							</div>
+							<div class="container">
+								<div class="card shadow bg-white">
+									<div class="card-body">
+										<h3 class="mb-4">Melbourne</h3>
+										<div style="font-size: 16px;">
+											<address>
+												121 King St,<br>Melbourne VIC 3000,<br>Australia
+											</address>
+											<div class="mb-4" style="font-size: 15px;">
+												<small class="text-black-50 d-block mb-2">Phone Number:</small>
+												<a href="tel:+(61)3-222-333-44" class="text-dark d-block mb-1">+(61)3-222-333-44</a>
+												<a href="tel:+(61)3-234-532-45" class="text-dark">+(61)3-234-532-45</a>
+											</div>
+
+											<a href="#" class="button button-rounded m-0 nott t600 ls0">Email Us</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="masonry-thumbs grid-5" data-big="1,6" data-lightbox="gallery">
+								<a href="#"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835253572242!2d144.95373531531297!3d-37.817327679751735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sin!4v1554124945593!5m2!1sen!2sin" width="500" height="334" allowfullscreen  style="border:0;"></iframe></a>
+								<a href="/coworking/images/location/thumbs/full/5.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/5.jpg" alt="Gallery Thumb 5"></a>
+								<a href="/coworking/images/location/thumbs/full/2.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/2.jpg" alt="Gallery Thumb 12"></a>
+								<a href="/coworking/images/location/thumbs/full/4.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/4.jpg" alt="Gallery Thumb 4"></a>
+								<a href="/coworking/images/location/thumbs/full/1.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/1.jpg" alt="Gallery Thumb 1"></a>
+								<a href="/coworking/images/location/thumbs/full/9.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/9.jpg" alt="Gallery Thumb 6"></a>
+								<a href="/coworking/images/location/thumbs/full/3.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/3.jpg" alt="Gallery Thumb 3"></a>
+								<a href="/coworking/images/location/thumbs/full/6.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/6.jpg" alt="Gallery Thumb 6"></a>
+								<a href="/coworking/images/location/thumbs/full/7.jpg" data-lightbox="gallery-item"><img src="/coworking/images/location/thumbs/7.jpg" alt="Gallery Thumb 7"></a>
+							</div>
+							<div class="container">
+								<div class="card shadow bg-white">
+									<div class="card-body">
+										<h3 class="mb-4">Sydney</h3>
+										<div style="font-size: 16px;">
+											<address>
+												Bennelong Point,<br>Sydney NSW 2000,<br>Australia.
+											</address>
+											<div class="mb-4" style="font-size: 15px;">
+												<small class="text-black-50 d-block mb-2">Phone Number:</small>
+												<a href="tel:+(61)2-222-333-44" class="text-dark d-block mb-1">+(61)2-222-333-44</a>
+												<a href="tel:+(61)2-234-532-45" class="text-dark">+(61)2-234-532-45</a>
+											</div>
+
+											<a href="#" class="button button-rounded m-0 nott t600 ls0">Email Us</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<img src="/coworking/images/location/perth.jpg" alt="Perth">
+							<div class="container">
+								<div class="card shadow bg-white">
+									<div class="card-body">
+										<h3 class="mb-4">Perth</h3>
+										<div style="font-size: 16px;">
+											<address>
+												Fraser Ave,<br>Perth WA 6005,<br>Australia
+											</address>
+											<div class="mb-4" style="font-size: 15px;">
+												<small class="text-black-50 d-block mb-2">Phone Number:</small>
+												<a href="tel:+(61)8-222-333-44" class="text-dark d-block mb-1">+(61)8-222-333-44</a>
+												<a href="tel:+(61)8-234-532-45" class="text-dark">+(61)8-234-532-45</a>
+											</div>
+
+											<div class="d-flex">
+												<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54159.94533455547!2d115.81934154447853!3d-31.96098939372422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32a525098d1f2f%3A0xec4a7b90626730e7!2sKings+Park+and+Botanic+Garden!5e0!3m2!1sen!2sin!4v1554279269646!5m2!1sen!2sin" data-lightbox="iframe" class="button button-rounded button-border m-0 nott t500 ls0">View Map</a>
+											<a href="#" class="button button-rounded m-0 nott t600 ls0 ml-2">Email Us</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="section nobg clearfix">
+					<div class="container">
+						<div class="heading-block nobottomborder center">
+							<div class="before-heading">See What's Up in Latest</div>
+							<h2 class="nott t600">News &amp; Events</h2>
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="row mb-5">
+							<div class="col-md-4 mt-5">
+								<article class="ipost">
+									<div class="entry-title">
+										<h3><a href="#">A Meetup for People Currently Running an e-Commerce Business</a></h3>
+									</div>
+									<div class="entry-content clearfix">
+										<p>Synergistically expedite focused experiences through orthogonal "outside the box" thinking. Collaboratively reconceptualize e-commerce via effective applications. Enthusiastically conceptualize go forward functionalities vis-a-vis sticky partnerships. Distinctively underwhelm premier scenarios without synergistic best practices. Globally target cross-platform.</p>
+									</div>
+									<div class="author-meta d-flex align-items-center">
+										<div class="author-image">
+											<img src="/articles/images/authors/1.jpg" alt="Author Image" class="rounded-circle">
+										</div>
+										<ul class="entry-meta m-0 clearfix">
+											<li><span>By</span> <a href="#">Hanson Deck</a></li>
+											<li class="mb-0"><a href="#">Mar 11, 2016</a></li>
+										</ul>
+									</div>
+								</article>
+							</div>
+
+							<div class="col-md-4 mt-5">
+								<article class="ipost">
+									<div class="entry-title">
+										<h3><a href="#">Creating Your Own Demand as a Digital Nomad</a></h3>
+									</div>
+									<div class="entry-content clearfix">
+										<p>Pellentesque hic illo beatae rhoncus sint, quis, fugiat imperdiet unde architecto magna dui hymenaeos autem lorem eligendi.</p>
+									</div>
+									<div class="author-meta d-flex align-items-center">
+										<div class="author-image">
+											<img src="/articles/images/authors/2.jpg" alt="Author Image" class="rounded-circle">
+										</div>
+										<ul class="entry-meta m-0 clearfix">
+											<li><span>By</span> <a href="#">Hanson Deck</a></li>
+											<li class="mb-0"><a href="#">Mar 11, 2016</a></li>
+										</ul>
+									</div>
+								</article>
+							</div>
+
+							<div class="col-md-4 mt-5">
+								<article class="ipost">
+									<div class="entry-title">
+										<h3><a href="#">Succeeding Remotely Within A Stateside Team</a></h3>
+									</div>
+									<div class="entry-content clearfix">
+										<p>Pellentesque hic illo beatae rhoncus sint, quis, fugiat imperdiet unde architecto magna dui hymenaeos autem lorem eligendi.</p>
+									</div>
+									<div class="author-meta d-flex align-items-center">
+										<div class="author-image">
+											<img src="/articles/images/authors/3.jpg" alt="Author Image" class="rounded-circle">
+										</div>
+										<ul class="entry-meta m-0 clearfix">
+											<li><span>By</span> <a href="#">Hanson Deck</a></li>
+											<li class="mb-0"><a href="#">Mar 11, 2016</a></li>
+										</ul>
+									</div>
+								</article>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="section mb-0 pb-0 bg-theme-light clearfix" style="padding-top: 120px;">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 offset-1">
+								<div class="before-heading">Don't Hesitate to Reach out to Us</div>
+									<h2 class="nott t600 display-4">Want to Talk?</h2>
+								<h4 class="t300 mb-4">Call us at <a href="tel:+(61)8-234-532-45">+(216) 75 601 540</a></h4>
+								<a href="#" class="button button-rounded button-xlarge m-0 nott t600 ls0 px-5">Email Us</a>
+							</div>
+						</div>
+					</div>
+					<img src="/coworking/images/footer-bg.jpg" alt="Footer Image" class="footer-img">
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="noborder" style="background-color: #155BBC; padding-top: 80px">
+
+			<div class="container">
+
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap dark pb-5 clearfix">
+
+					<div class="row">
+
+						<div class="col-lg-2 col-md-2 col-6">
+							<div class="widget clearfix">
+
+								<h4 class="ls0 mb-4 nott text-white">Features</h4>
+
+								<ul class="list-unstyled ml-0">
+									<li class="mb-2"><a href="#">Help Center</a></li>
+									<li class="mb-2"><a href="#">Paid with Moblie</a></li>
+									<li class="mb-2"><a href="#">Status</a></li>
+									<li class="mb-2"><a href="#">Contact Support</a></li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-2 col-6">
+							<div class="widget clearfix">
+
+								<h4 class="ls0 mb-4 nott text-white">Support</h4>
+
+								<ul class="list-unstyled ml-0">
+									<li class="mb-2"><a href="index">Home</a></li>
+									<li class="mb-2"><a href="#">About</a></li>
+									<li class="mb-2"><a href="#">FAQs</a></li>
+									<li class="mb-2"><a href="#">Support</a></li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-2 col-6">
+							<div class="widget clearfix">
+
+								<h4 class="ls0 mb-4 nott text-white">Trending</h4>
+
+								<ul class="list-unstyled ml-0">
+									<li class="mb-2"><a href="#">Shop</a></li>
+									<li class="mb-2"><a href="#">Courses</a></li>
+									<li class="mb-2"><a href="#">Events</a></li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-2 col-6">
+							<div class="widget clearfix">
+
+								<h4 class="ls0 mb-4 nott text-white">Get to Know us</h4>
+
+								<ul class="list-unstyled ml-0">
+									<li class="mb-2"><a href="#">Corporate</a></li>
+									<li class="mb-2"><a href="#">Agency</a></li>
+									<li class="mb-2"><a href="#">eCommerce</a></li>
+									<li class="mb-2"><a href="#">Personal</a></li>
+								</ul>
+
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-4">
+							<div id="instagram" class="widget clearfix">
+
+								<h4 class="ls0 mb-4 nott text-white">Instagram Photos</h4>
+								<div id="instagram-photos" class="instagram-photos masonry-thumbs grid-5" data-user="5834720953" data-count="15" data-type="user"></div>
+
+							</div>
+						</div>
+
+						<div class="line"></div>
+
+						<div class="row">
+							<div class="col-sm-3">
+								<a href="index"><img src="/coworking/images/logo-footer.png" alt="Logo Footer" class="mb-4" height="20"></a>
+								<p class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+								<a href="#" class="social-icon si-small si-light si-facebook" title="Facebook">
+									<i class="icon-facebook"></i>
+									<i class="icon-facebook"></i>
+								</a>
+								<a href="#" class="social-icon si-small si-light si-twitter" title="Twitter">
+									<i class="icon-twitter"></i>
+									<i class="icon-twitter"></i>
+								</a>
+								<a href="#" class="social-icon si-small si-light si-github" title="Github">
+									<i class="icon-github"></i>
+									<i class="icon-github"></i>
+								</a>
+								<a href="#" class="social-icon si-small si-light si-instagram" title="instagram">
+									<i class="icon-instagram"></i>
+									<i class="icon-instagram"></i>
+								</a>
+							</div>
+							<div class="col-sm-9">
+								<ul class="list-numbers">
+									<li class="text-white-50 t300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores voluptatum corporis, repellat assumenda, cumque labore nam fuga deserunt harum, magni asperiores iure? Quos nobis molestiae dolorum obcaecati ad omnis, sint.</li>
+									<li class="text-white-50 t300 mb-0">Completely embrace real-time systems whereas fully tested schemas. Synergistically actualize state of the art functionalities vis-a-vis cross-platform data. Conveniently reinvent web-enabled bandwidth via cost effective e-tailers. Proactively engage compelling outsourcing after virtual synergy. Distinctively formulate granular.
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+			
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights" class="nobg dark pt-0">
+
+				<div class="line mt-0"></div>
+
+				<div class="container clearfix">
+
+					<div class="row">
+						<div class="col-12">
+							<p class="mb-2 text-white-50">Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.</p>
+							<div class="copyright-links text-white-50"><a href="#" class="text-white-50">Terms of Use</a> / <a href="#" class="text-white-50">Privacy Policy</a></div>
+						</div>
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+	  {% block body %}{% endblock %}
+ {% block javascripts %}{% endblock %}
+	<!-- External JavaScripts
+	============================================= -->
+	<script src="{{ asset('/js/jquery.js')}}"></script>
+	<script src="{{ asset('/js/plugins.js')}}"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+</body>
+</html>
+      
+     
+
+                                
+       
+    </body>
+</html>
