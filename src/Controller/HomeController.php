@@ -1,9 +1,13 @@
 <?php
 namespace App\Controller;
 
-
+use App\Entity\Person;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController{
@@ -45,6 +49,19 @@ class HomeController extends AbstractController{
    );
 }
 
+/**
+     * @route("/soon", name="soonpage")
+     * 
+     */
+
+    public function soon(){
+
+     return $this->render ('soon.html.twig',
+);
 }
+
+
+}
+
 
 ?>

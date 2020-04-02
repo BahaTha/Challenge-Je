@@ -1,33 +1,103 @@
 
-
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
+<style>
+.fixed-feedback {
+	position: fixed;
+	top: 25%;
+	right: -300px;
+	width: 300px;
+	height: auto;
+	z-index: 299;
+	background-color: #EEE;
+	-webkit-transition: right .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	-o-transition: right .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition: right .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    -webkit-backface-visibility: hidden;
+}
+
+.fixed-feedback .fixed-feedback-button {
+	position: absolute;
+	left: -44px;
+	color: #333;
+	writing-mode: vertical-rl;
+	font-size: 1rem;
+	background-color: #EEE;
+	padding: 15px 10px;
+	cursor: pointer;
+}
+
+.fixed-feedback .fixed-feedback-form {
+	opacity: 0;
+	padding: 25px 30px;
+	transition: opacity .3s .15s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.fixed-feedback.fixed-feedback-open { right: 0; }
+.fixed-feedback.fixed-feedback-open .fixed-feedback-form { opacity: 1; }
+
+#feedback-rating,
+.feedback-rating-loader {
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.feedback-rating-loader { background: transparent; }
+
+.feedback-rating-loader > div { background-color: #999;  }
+
+.feedback-rating-loader,
+.feedback-rating-processing #feedback-rating,
+#feedback-rating-submitted,
+.feedback-rating-complete .feedback-rating-loader {
+	display: none;
+	opacity: 0;
+}
+
+.feedback-rating-processing .feedback-rating-loader,
+.feedback-rating-complete #feedback-rating {
+	display: block;
+	opacity: 1;
+}
+</style>
 <link rel="icon" href="/coworking/images/ofib.png">
+
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="SemiColonWeb" />
+	{% block title %}  {% endblock %}
+	 {% block stylesheets %}{% endblock %}
 
 	<!-- Stylesheets
-    
 	============================================= -->
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css" />
-	<link rel="stylesheet" href="{{asset('style.css')}}" type="text/css" />
-	<link rel="stylesheet" href="{{('css/dark.css')}}" type="text/css" />
-	<link rel="stylesheet" href="{{('css/font-icons.css')}}" type="text/css" />
-	<link rel="stylesheet" href="{{('css/animate.css')}}" type="text/css" />
-	<link rel="stylesheet" href="{{('css/magnific-popup.css')}}" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/css/bootstrap.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/style.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/css/dark.css')}}" type="text/css" />
 
-	<link rel="stylesheet" href="{{('css/responsive.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/css/font-icons.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/css/animate.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/css/magnific-popup.css')}}" type="text/css" />
+
+	<link rel="stylesheet" href="{{ asset ('/css/responsive.css')}}" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Workspace Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="{{ asset ('/css/colors.php?color=267DF4')}}" type="text/css" /> <!-- Theme Color -->
+	<link rel="stylesheet" href="{{ asset ('/coworking/css/fonts.css')}}" type="text/css" /> <!-- Theme Font -->
+	<link rel="stylesheet" href="{{ asset ('/coworking/coworking.css')}}" type="text/css" /> <!-- Theme CSS -->
+	<!-- / -->
 
 	<!-- Document Title
 	============================================= -->
-	<title>Event Register Oficina</title>
+	<title>Coworking | Oficina </title>
 
 </head>
+        
 
 <body class="stretched">
+
 
 	<!-- Document Wrapper
 	============================================= -->
@@ -35,7 +105,7 @@
 
 		<!-- Header
 		============================================= -->
-		<header id="header" class="full-header">
+		<header id="header" class="clearfix static-sticky border-bottom-0">
 
 			<div id="header-wrap">
 
@@ -50,7 +120,7 @@
 						<a href="index" class="retina-logo" data-sticky-logo="/coworking/images/ofi.png"><img src="/coworking/images/oficina.png" alt="Canvas Logo"></a>
 					</div><!-- #logo end -->
 
-						<!-- Primary Navigation
+					<!-- Primary Navigation
 					============================================= -->
 					<nav id="primary-menu" class="dark">
 
@@ -405,7 +475,7 @@
 									<ul class="mega-menu-column col-5">
 										<li class="mega-menu-title"><a href="#"><div>Grids</div></a>
 											<ul>
-											<li><a href="Event"><div>Register for an event</div></a></li>
+												<li><a href="Event"><div>Register for an event</div></a></li>
 												<li><a href="portfolio-2.html"><div>2 Columns</div></a></li>
 												<li><a href="portfolio-3.html"><div>3 Columns</div></a></li>
 												<li><a href="portfolio.html"><div>4 Columns</div></a></li>
@@ -730,7 +800,7 @@
 					</form>
 				</div>
 				<div class="card-footer py-4 center">
-					<p class="mb-0">Don't have an account? <a href="#"><u>Sign up</u></a></p>
+					<p class="mb-0">Don't have an account? <a href="Register"><u>Sign up</u></a></p>
 				</div>
 			</div>
 		</div>
@@ -750,160 +820,43 @@
 
 		</header><!-- #header end -->
 
-		<!-- Page Title
-		============================================= -->
-		<section id="page-title">
-
-			<div class="container clearfix">
-				<h1>Event Registration</h1>
-				<span>Forms Widget</span>
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item"><a href="#">Widgets</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Event Registration Form</li>
-				</ol>
-			</div>
-
-		</section><!-- #page-title end -->
-
 		<!-- Content
 		============================================= -->
 		<section id="content">
 
 			<div class="content-wrap">
 
-				<div class="container clearfix">
+				<div class="container subscribe-widget clearfix">
 
-					<div class="form-widget">
+					<div class="heading-block title-center nobottomborder">
+						<h1>ROAD PFE </h1>
+						<span>Please check back again within Some Days as We're Pretty Close</span>
+					</div>
 
-						<div class="form-result"></div>
+					<div id="countdown-ex1" class="countdown countdown-large divcenter bottommargin" style="max-width:700px;"></div>
 
-						<div class="row">
-							<div class="col-lg-6">
-								<form class="row" id="event-registration" action="include/form.php" method="post" enctype="multipart/form-data">
-									<div class="form-process"></div>
-									<div class="col-6 form-group">
-										<label>First Name:</label>
-										<input type="text" name="event-registration-first-name" id="event-registration-first-name" class="form-control required" value="" placeholder="Enter your First Name">
+					<div class="clear"></div>
+
+					<div class="progress topmargin divcenter" style="height: 10px; max-width:600px;">
+						<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+							<span class="sr-only">80% Complete</span>
+						</div>
+					</div>
+
+					<div class="divider divider-center divider-short divider-margin"><i class="icon-time"></i></div>
+
+					<div class="widget-subscribe-form-result"></div>
+					<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="nobottommargin">
+						<div class="input-group input-group-lg divcenter" style="max-width:600px;">
+							<div class="input-group-prepend">
+										<div class="input-group-text"><i class="icon-email2"></i></div>
 									</div>
-									<div class="col-6 form-group">
-										<label>Last Name:</label>
-										<input type="text" name="event-registration-last-name" id="event-registration-last-name" class="form-control required" value="" placeholder="Enter your Last Name">
-									</div>
-									<div class="col-12 form-group">
-										<label>Email:</label>
-										<input type="email" name="event-registration-email" id="event-registration-email" class="form-control required" value="" placeholder="Enter your Email Address">
-									</div>
-									<div class="col-6 form-group">
-										<label>Gender:</label><br>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input required" type="radio" name="event-registration-gender"id="event-registration-gender-male" value="Male">
-											<label class="form-check-label nott" for="event-registration-gender-male">Male</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="event-registration-gender"id="event-registration-gender-female" value="Female">
-											<label class="form-check-label nott" for="event-registration-gender-female">Female</label>
-										</div>
-									</div>
-									<div class="col-6 form-group">
-										<label>Interests</label>
-										<select class="form-control required" name="event-registration-interests" id="event-registration-interests">
-											<option value="">-- Select One --</option>
-											<option value="UX Design">UX Design</option>
-											<option value="Backend Development">Backend Development</option>
-											<option value="Videography">Videography</option>
-											<option value="VFX Animations">VFX Animations</option>
-											<option value="Others">Others</option>
-										</select>
-									</div>
-									<div class="col-12">
-										<div class="form-group">
-											<label>Website:</label>
-											<input type="text" name="event-registration-website" id="event-registration-website" class="form-control required url" value="https://" placeholder="Enter your Website Address">
-										</div>
-										<div class="form-group">
-											<label>Bio:</label>
-											<textarea name="event-registration-bio" id="event-registration-bio" class="form-control required" cols="30" rows="5"></textarea>
-										</div>
-									</div>
-									<div class="col-6 form-group">
-										<label>Social Media Handles:</label>
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">Twitter</span>
-											</div>
-											<input type="text" name="event-registration-twitter" id="event-registration-twitter" class="form-control" value="" placeholder="@username">
-										</div>
-									</div>
-									<div class="col-6 form-group">
-										<label for="">&nbsp;</label>
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">Github</span>
-											</div>
-											<input type="text" name="event-registration-github" id="event-registration-github" class="form-control" value="" placeholder="@username">
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="form-group">
-											<label>Event Passes</label>
-											<select class="form-control required" name="event-registration-passes" id="event-registration-passes">
-												<option value="">-- Select One --</option>
-												<option value="Contributors Day + Main Event">Contributors Day + Main Event</option>
-												<option value="Main Event only">Main Event only</option>
-												<option value="VIP Access">All Days + VIP Access to Insiders Club</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="form-group">
-											<label>How did you hear about the Event?</label>
-											<select class="form-control required" name="event-registration-know-us" id="event-registration-know-us">
-												<option value="">-- Select One --</option>
-												<option value="Google">Google</option>
-												<option value="Social Media">Social Media</option>
-												<option value="Friends">Friends</option>
-												<option value="Advertisement">Advertisement</option>
-												<option value="Others">Others</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-12 hidden">
-										<input type="text" id="event-registration-botcheck" name="event-registration-botcheck" value="" />
-									</div>
-									<div class="col-12">
-										<button type="submit" name="event-registration-submit" class="btn btn-secondary">Register</button>
-									</div>
-
-									<input type="hidden" name="prefix" value="event-registration-">
-								</form>
-							</div>
-
-							<div class="col-lg-6 pl-lg-4">
-								<p><span class="dropcap">F</span>oster best practices effectiveness inspire breakthroughs solve immunize turmoil. Policy dialogue peaceful The Elders rural global support. Process inclusive innovate readiness, public sector complexity. Lifting people up cornerstone partner, technology working families civic engagement activist recognize potential global network. Countries tackling solution respond change-makers tackle. Assistance, giving; fight against malnutrition experience in the field lasting change scalable. Empowerment long-term, fairness policy community progress social responsibility; Cesar Chavez recognition. Expanding community ownership visionary indicator pursue these aspirations accessibility. Achieve; worldwide, life-saving initiative facilitate. New approaches, John Lennon humanitarian relief fundraise vaccine Jane Jacobs community health workers Oxfam. Our ambitions informal economies.</p>
-
-								<blockquote class="topmargin bottommargin">
-									<p>Human rights healthcare immunize; advancement grantees. Medical supplies; meaningful, truth technology catalytic effect. Promising development capacity building international enable poverty.</p>
-								</blockquote>
-
-								<div class="col_full nobottommargin">
-
-									<p>Provide, Aga Khan, interconnectivity governance fairness replicable, new approaches visionary implementation. End hunger evolution, future promising development youth. Public sector, small-scale farmers; harness facilitate gender. Contribution dedicated global change movements, prosperity accelerate progress citizens of change. Elevate; accelerate reduce child mortality; billionaire philanthropy fluctuation, plumpy'nut care opportunity catalyze. Partner deep.</p>
-
-								</div>
-
-								<div class="col_full nobottommargin">
-
-									<p>Frontline harness criteria governance freedom contribution. Campaign Angelina Jolie natural resources, Rockefeller peaceful philanthropy human potential. Justice; outcomes reduce carbon emissions nonviolent resistance human being. Solve innovate aid communities; benefit truth rural development UNICEF meaningful work. Generosity Action Against Hunger relief; many voices impact crisis situation poverty pride. Vaccine carbon.</p>
-
-								</div>
-
-								<div class="clear"></div>
-
+							<input type="email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
+							<div class="input-group-append">
+								<button class="btn btn-secondary" type="submit">Subscribe Now</button>
 							</div>
 						</div>
-
-					</div>
+					</form>
 
 				</div>
 
@@ -913,226 +866,133 @@
 
 		<!-- Footer
 		============================================= -->
-		<footer id="footer" class="dark">
+		<footer id="footer" class="noborder" style="background-color: #155BBC; padding-top: 80px">
 
 			<div class="container">
 
 				<!-- Footer Widgets
 				============================================= -->
-				<div class="footer-widgets-wrap clearfix">
+				<div class="footer-widgets-wrap dark pb-5 clearfix">
 
-					<div class="col_two_third">
+					<div class="row">
 
-						<div class="col_one_third">
-
+						<div class="col-lg-2 col-md-2 col-6">
 							<div class="widget clearfix">
 
-								<img src="images/footer-widget-logo.png" alt="" class="footer-logo">
+								<h4 class="ls0 mb-4 nott text-white">Features</h4>
 
-								<p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
-
-								<div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
-									<address>
-										<strong>Headquarters:</strong><br>
-										795 Folsom Ave, Suite 600<br>
-										San Francisco, CA 94107<br>
-									</address>
-									<abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br>
-									<abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>
-									<abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="col_one_third">
-
-							<div class="widget widget_links clearfix">
-
-								<h4>Blogroll</h4>
-
-								<ul>
-									<li><a href="https://codex.wordpress.org/">Documentation</a></li>
-									<li><a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
-									<li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
-									<li><a href="https://wordpress.org/support/">Support Forums</a></li>
-									<li><a href="https://wordpress.org/extend/themes/">Themes</a></li>
-									<li><a href="https://wordpress.org/news/">WordPress Blog</a></li>
-									<li><a href="https://planet.wordpress.org/">WordPress Planet</a></li>
+								<ul class="list-unstyled ml-0">
+									<li class="mb-2"><a href="#">Help Center</a></li>
+									<li class="mb-2"><a href="#">Paid with Moblie</a></li>
+									<li class="mb-2"><a href="#">Status</a></li>
+									<li class="mb-2"><a href="#">Contact Support</a></li>
 								</ul>
 
 							</div>
-
 						</div>
-
-						<div class="col_one_third col_last">
-
+						<div class="col-lg-2 col-md-2 col-6">
 							<div class="widget clearfix">
-								<h4>Recent Posts</h4>
 
-								<div id="post-list-footer">
-									<div class="spost clearfix">
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
-											</div>
-											<ul class="entry-meta">
-												<li>10th July 2014</li>
-											</ul>
-										</div>
-									</div>
+								<h4 class="ls0 mb-4 nott text-white">Support</h4>
 
-									<div class="spost clearfix">
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-											</div>
-											<ul class="entry-meta">
-												<li>10th July 2014</li>
-											</ul>
-										</div>
-									</div>
+								<ul class="list-unstyled ml-0">
+									<li class="mb-2"><a href="index">Home</a></li>
+									<li class="mb-2"><a href="#">About</a></li>
+									<li class="mb-2"><a href="#">FAQs</a></li>
+									<li class="mb-2"><a href="#">Support</a></li>
+								</ul>
 
-									<div class="spost clearfix">
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
-											</div>
-											<ul class="entry-meta">
-												<li>10th July 2014</li>
-											</ul>
-										</div>
-									</div>
-								</div>
 							</div>
+						</div>
+						<div class="col-lg-2 col-md-2 col-6">
+							<div class="widget clearfix">
 
+								<h4 class="ls0 mb-4 nott text-white">Trending</h4>
+
+								<ul class="list-unstyled ml-0">
+									<li class="mb-2"><a href="#">Shop</a></li>
+									<li class="mb-2"><a href="#">Courses</a></li>
+									<li class="mb-2"><a href="#">Events</a></li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-2 col-6">
+							<div class="widget clearfix">
+
+								<h4 class="ls0 mb-4 nott text-white">Get to Know us</h4>
+
+								<ul class="list-unstyled ml-0">
+									<li class="mb-2"><a href="#">Corporate</a></li>
+									<li class="mb-2"><a href="#">Agency</a></li>
+									<li class="mb-2"><a href="#">eCommerce</a></li>
+									<li class="mb-2"><a href="#">Personal</a></li>
+								</ul>
+
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-4">
+							<div id="instagram" class="widget clearfix">
+
+								<h4 class="ls0 mb-4 nott text-white">Instagram Photos</h4>
+								<div id="instagram-photos" class="instagram-photos masonry-thumbs grid-5" data-user="5834720953" data-count="15" data-type="user"></div>
+
+							</div>
+						</div>
+
+						<div class="line"></div>
+
+						<div class="row">
+							<div class="col-sm-3">
+								<a href="index"><img src="/coworking/images/logo-footer.png" alt="Logo Footer" class="mb-4" height="20"></a>
+								<p class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+								<a href="#" class="social-icon si-small si-light si-facebook" title="Facebook">
+									<i class="icon-facebook"></i>
+									<i class="icon-facebook"></i>
+								</a>
+								<a href="#" class="social-icon si-small si-light si-twitter" title="Twitter">
+									<i class="icon-twitter"></i>
+									<i class="icon-twitter"></i>
+								</a>
+								<a href="#" class="social-icon si-small si-light si-github" title="Github">
+									<i class="icon-github"></i>
+									<i class="icon-github"></i>
+								</a>
+								<a href="#" class="social-icon si-small si-light si-instagram" title="instagram">
+									<i class="icon-instagram"></i>
+									<i class="icon-instagram"></i>
+								</a>
+							</div>
+							<div class="col-sm-9">
+								<ul class="list-numbers">
+									<li class="text-white-50 t300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores voluptatum corporis, repellat assumenda, cumque labore nam fuga deserunt harum, magni asperiores iure? Quos nobis molestiae dolorum obcaecati ad omnis, sint.</li>
+									<li class="text-white-50 t300 mb-0">Completely embrace real-time systems whereas fully tested schemas. Synergistically actualize state of the art functionalities vis-a-vis cross-platform data. Conveniently reinvent web-enabled bandwidth via cost effective e-tailers. Proactively engage compelling outsourcing after virtual synergy. Distinctively formulate granular.
+									</li>
+								</ul>
+							</div>
 						</div>
 
 					</div>
 
-					<div class="col_one_third col_last">
-
-						<div class="widget clearfix" style="margin-bottom: -20px;">
-
-							<div class="row">
-
-								<div class="col-lg-6 bottommargin-sm">
-									<div class="counter counter-small"><span data-from="50" data-to="15065421" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
-									<h5 class="nobottommargin">Total Downloads</h5>
-								</div>
-
-								<div class="col-lg-6 bottommargin-sm">
-									<div class="counter counter-small"><span data-from="100" data-to="18465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>
-									<h5 class="nobottommargin">Clients</h5>
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="widget subscribe-widget subscribe-form clearfix">
-							<h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
-							<div class="widget-subscribe-form-result"></div>
-							<form action="include/subscribe.php" method="post" class="nobottommargin">
-								<div class="input-group divcenter">
-									<div class="input-group-prepend">
-										<div class="input-group-text"><i class="icon-email2"></i></div>
-									</div>
-									<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-									<div class="input-group-append">
-										<button class="btn btn-success" type="submit">Subscribe</button>
-									</div>
-								</div>
-							</form>
-						</div>
-
-						<div class="widget clearfix" style="margin-bottom: -20px;">
-
-							<div class="row">
-
-								<div class="col-lg-6 clearfix bottommargin-sm">
-									<a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
-										<i class="icon-facebook"></i>
-										<i class="icon-facebook"></i>
-									</a>
-									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
-								</div>
-								<div class="col-lg-6 clearfix">
-									<a href="#" class="social-icon si-dark si-colored si-rss nobottommargin" style="margin-right: 10px;">
-										<i class="icon-rss"></i>
-										<i class="icon-rss"></i>
-									</a>
-									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
-								</div>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				</div><!-- .footer-widgets-wrap end -->
+				</div>
 
 			</div>
+			
 
 			<!-- Copyrights
 			============================================= -->
-			<div id="copyrights">
+			<div id="copyrights" class="nobg dark pt-0">
+
+				<div class="line mt-0"></div>
 
 				<div class="container clearfix">
 
-					<div class="col_half">
-						Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
-						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
-					</div>
-
-					<div class="col_half col_last tright">
-						<div class="fright clearfix">
-							<a href="#" class="social-icon si-small si-borderless si-facebook">
-								<i class="icon-facebook"></i>
-								<i class="icon-facebook"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-twitter">
-								<i class="icon-twitter"></i>
-								<i class="icon-twitter"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-gplus">
-								<i class="icon-gplus"></i>
-								<i class="icon-gplus"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-pinterest">
-								<i class="icon-pinterest"></i>
-								<i class="icon-pinterest"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-vimeo">
-								<i class="icon-vimeo"></i>
-								<i class="icon-vimeo"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-github">
-								<i class="icon-github"></i>
-								<i class="icon-github"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-yahoo">
-								<i class="icon-yahoo"></i>
-								<i class="icon-yahoo"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-linkedin">
-								<i class="icon-linkedin"></i>
-								<i class="icon-linkedin"></i>
-							</a>
+					<div class="row">
+						<div class="col-12">
+							<p class="mb-2 text-white-50">Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.</p>
+							<div class="copyright-links text-white-50"><a href="#" class="text-white-50">Terms of Use</a> / <a href="#" class="text-white-50">Privacy Policy</a></div>
 						</div>
-
-						<div class="clear"></div>
-
-						<i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +91-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
 					</div>
 
 				</div>
@@ -1142,25 +1002,124 @@
 		</footer><!-- #footer end -->
 
 	</div><!-- #wrapper end -->
+	<div class="fixed-feedback">
+		<div class="fixed-feedback-button">Feedback</div>
+		<div class="fixed-feedback-form form-widget" style="min-height: 100px;">
+			<div class="form-result"></div>
+			<div class="feedback-rating-loader css3-spinner" style="position: absolute; z-index:auto;">
+				<div class="css3-spinner-bounce1"></div>
+				<div class="css3-spinner-bounce2"></div>
+				<div class="css3-spinner-bounce3"></div>
+			</div>
+			<div id="feedback-rating-submitted" class="center">
+				<img class="mb-3" src="/coworking/checked.svg" alt="" width="42">
+				<p class="lead nobottommargin">We have already received your Feedback!</p>
+			</div>
+			<form class="row m-0" id="feedback-rating" action="/coworking/form.php" method="post">
+				<div class="form-process"></div>
+				<div class="col-12">
+					<div class="form-group">
+						<label>Ease of Use:</label>
+						<div class="btn-group btn-group-sm btn-group-toggle d-flex" data-toggle="buttons">
+							<label class="btn btn-outline-danger ls0 nott">
+								<input type="radio" name="feedback-rating-ease" id="feedback-rating-ease-1" value="Terrible"><i class="icon-sad-cry1"></i>
+							</label>
+							<label class="btn btn-outline-danger ls0 nott">
+								<input type="radio" name="feedback-rating-ease" id="feedback-rating-ease-2" value="Bad"><i class="icon-frown1"></i>
+							</label>
+							<label class="btn btn-outline-warning ls0 nott">
+								<input type="radio" name="feedback-rating-ease" id="feedback-rating-ease-3" value="Average"><i class="icon-meh1"></i>
+							</label>
+							<label class="btn btn-outline-success ls0 nott">
+								<input type="radio" name="feedback-rating-ease" id="feedback-rating-ease-4" value="Good"><i class="icon-smile1"></i>
+							</label>
+							<label class="btn btn-outline-success ls0 nott">
+								<input type="radio" name="feedback-rating-ease" id="feedback-rating-ease-5" value="Awesome"><i class="icon-grin-beam1"></i>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>UX Design:</label>
+						<div class="btn-group btn-group-sm btn-group-toggle d-flex" data-toggle="buttons">
+							<label class="btn btn-outline-danger ls0 nott">
+								<input type="radio" name="feedback-rating-ux-design" id="feedback-rating-ux-design-1" value="Terrible"><i class="icon-sad-cry1"></i>
+							</label>
+							<label class="btn btn-outline-danger ls0 nott">
+								<input type="radio" name="feedback-rating-ux-design" id="feedback-rating-ux-design-2" value="Bad"><i class="icon-frown1"></i>
+							</label>
+							<label class="btn btn-outline-warning ls0 nott">
+								<input type="radio" name="feedback-rating-ux-design" id="feedback-rating-ux-design-3" value="Average"><i class="icon-meh1"></i>
+							</label>
+							<label class="btn btn-outline-success ls0 nott">
+								<input type="radio" name="feedback-rating-ux-design" id="feedback-rating-ux-design-4" value="Good"><i class="icon-smile1"></i>
+							</label>
+							<label class="btn btn-outline-success ls0 nott">
+								<input type="radio" name="feedback-rating-ux-design" id="feedback-rating-ux-design-5" value="Awesome"><i class="icon-grin-beam1"></i>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Functionality:</label>
+						<div class="btn-group btn-group-sm btn-group-toggle d-flex" data-toggle="buttons">
+							<label class="btn btn-outline-danger ls0 nott">
+								<input type="radio" name="feedback-rating-functionality" id="feedback-rating-functionality-1" value="Terrible"><i class="icon-sad-cry1"></i>
+							</label>
+							<label class="btn btn-outline-danger ls0 nott">
+								<input type="radio" name="feedback-rating-functionality" id="feedback-rating-functionality-2" value="Bad"><i class="icon-frown1"></i>
+							</label>
+							<label class="btn btn-outline-warning ls0 nott">
+								<input type="radio" name="feedback-rating-functionality" id="feedback-rating-functionality-3" value="Average"><i class="icon-meh1"></i>
+							</label>
+							<label class="btn btn-outline-success ls0 nott">
+								<input type="radio" name="feedback-rating-functionality" id="feedback-rating-functionality-4" value="Good"><i class="icon-smile1"></i>
+							</label>
+							<label class="btn btn-outline-success ls0 nott">
+								<input type="radio" name="feedback-rating-functionality" id="feedback-rating-functionality-5" value="Awesome"><i class="icon-grin-beam1"></i>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 hidden">
+					<input type="text" id="feedback-rating-botcheck" name="feedback-rating-botcheck" value="" />
+				</div>
+				<div class="col-12 d-none">
+					<button type="submit" name="feedback-rating-submit" id="feedback-rating-submit" class="btn btn-secondary">Submit</button>
+				</div>
+
+				<input type="hidden" name="prefix" value="feedback-rating-">
+			</form>
+		</div>
+	</div>
+
+	
 
 	<!-- Go To Top
 	============================================= -->
 	<div id="gotoTop" class="icon-angle-up"></div>
-
+	  {% block body %}{% endblock %}
+ {% block javascripts %}{% endblock %}
 	<!-- External JavaScripts
 	============================================= -->
-	<script src="{{asset('js/jquery.js')}}"></script>
-	<script src="{{asset('js/plugins.js')}}"></script>
+	<script src="{{ asset('/js/jquery.js')}}"></script>
+	<script src="{{ asset('/js/plugins.js')}}"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="{{asset('js/functions.js')}}"></script>
-
+	<script src="js/functions.js"></script>
+    
 	<script>
-		jQuery(document).ready( function(){
-			
-		})
+		jQuery(document).ready( function($){
+			var newDate = new Date(2020, 04, 25);
+			$('#countdown-ex1').countdown({until: newDate});
+		});
 	</script>
 
 </body>
+</html>
+      
+     
+
+                                
+       
+    </body>
 </html>
