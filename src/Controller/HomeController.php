@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use App\Entity\Person;
+use App\Entity\User1;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;

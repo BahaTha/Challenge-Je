@@ -708,14 +708,14 @@
 
 					<div class="divider divider-center"><span class="position-relative" style="top: -2px">OR</span></div>
 
-					<form id="login-form" name="login-form" class="nobottommargin row" action="#" method="post">
+					<form id="login-form" name="login-form" class="nobottommargin row" action="{{ path('account_login') }}" method="post">
 
 						<div class="col-12">
-							<input type="text" id="login-form-username" name="login-form-username" value="" class="form-control not-dark" placeholder="Username" />
+							<input type="text" id="login-form-username" name="_username" value="" class="form-control not-dark" placeholder="Username" />
 						</div>
 
 						<div class="col-12 mt-4">
-							<input type="password" id="login-form-password" name="login-form-password" value="" class="form-control not-dark" placeholder="Password" />
+							<input type="password" id="login-form-password" name="_password" value="" class="form-control not-dark" placeholder="Password" />
 						</div>
 
 						<div class="col-12">
@@ -775,15 +775,15 @@
 
 						<div class="acctitle"><i class="acc-closed icon-lock3"></i><i class="acc-open icon-unlock"></i>Login to your Account</div>
 						<div class="acc_content clearfix">
-							<form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">
+							<form id="login-form" name="login-form" class="nobottommargin" action="{{ path('account_login')}}" method="post">
 								<div class="col_full">
 									<label for="login-form-username">Username:</label>
-									<input type="text" id="login-form-username" name="login-form-username" value="" class="form-control" />
+									<input type="text" id="login-form-username" name="_username" value="" class="form-control" />
 								</div>
 
 								<div class="col_full">
 									<label for="login-form-password">Password:</label>
-									<input type="password" id="login-form-password" name="login-form-password" value="" class="form-control" />
+									<input type="password" id="login-form-password" name="_password" value="" class="form-control" />
 								</div>
 
 								<div class="col_full nobottommargin">
