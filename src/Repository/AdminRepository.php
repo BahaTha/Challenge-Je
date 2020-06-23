@@ -1,0 +1,93 @@
+<?php
+
+namespace App\Repository;
+
+use App\Entity\Admin;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Persistence\ManagerRegistry;
+use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
+use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
+/**
+ * @method Admin|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Admin|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Admin[]    findAll()
+ * @method Admin[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ */
+class AdminRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
+{ private $encryptionService;
+    private $entityManager;
+    private $userPasswordEncoderInterface;
+ 
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, Admin::class);
+    }
+    public function save(Admin $user): Response
+    {
+        $passwordHash = $this->userPasswordEncoderInterface->encodePassword($user, $user->getPassword());
+        $user->setPassword($passwordHash);
+
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
+
+        return new Response('password encoded');
+    }
+
+    /**
+     * Used to upgrade (rehash) the user's password automatically over time.
+     */
+    public function upgradePassword(UserInterface $user, string $newEncodedPassword): void
+    {
+        if (!$user instanceof Admin) {
+            throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', \get_class($user)));
+        }
+
+        $user->setPassword($newEncodedPassword);
+        $this->_em->persist($user);
+        $this->_em->flush();
+    }
+    public function loadUserByUsername($usernameOrEmail)
+    {
+        return $this->createQuery(
+                'SELECT u
+                FROM App\Entity\Admin u
+                WHERE u.username = :query
+                OR u.email = :query'
+            )
+            ->setParameter('query', $usernameOrEmail)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
+     /**
+      * @return Admin[] Returns an array of Admin objects
+      */
+    
+    public function findByExampleField($value)
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.exampleField = :val')
+            ->setParameter('val', $value)
+            ->orderBy('u.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
+
+    
+    public function findOneBySomeField($value): ?Admin
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.exampleField = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+    
+}

@@ -2,10 +2,13 @@
 
 namespace App\Form;
 
-use App\Entity\User;
+use App\Entity\User5;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class RegistrationType extends AbstractType
 {
@@ -27,18 +30,24 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Name')
-            ->add('Email')
-            ->add('Username')
-            ->add('Phone')
-            ->add('Password')
-        ;
-    }
+            ->add('Name',TextType::class, $this->getConfiguration('Name',"Votre nom"))
+            ->add('Email',EmailType::class , $this->getConfiguration('Email',"Votre email"))
+            ->add('Username',TextType::class,$this->getConfiguration('Username',"Votre username" ))
+            ->add('Phone',TextType::class , $this->getConfiguration('numero',"Votre numero"))
+            ->add('Password',PasswordType::class, $this->getConfiguration('password',"Votre password")) 
+            ->add("passwordconfirm", PasswordType::class);
+        
+    
+}
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => User::class,
+            'Name' => 'baha',
+            'Email' => 'register-form-email',
+            'Username' => 'register-form-username',
+            'Phone' => 'register-form-phone',
+            'Password' => 'register-form-password',
         ]);
     }
 }

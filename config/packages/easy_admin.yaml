@@ -1,0 +1,294 @@
+easy_admin:
+   design:
+       menu:
+        
+        - { label: "Entities" }
+        - label: "Articles"
+          children: 
+             - { entity: Article , label: "Articles List" , icon: "th-list"}
+             - { entity: Article , label: "Add Article" , icon: "plus", params: {action: 'new'}}
+        - label: "Courses"
+          children: 
+             - { entity: Courses , label: "Courses List" , icon: "th-list"}
+             - { entity: Courses , label: "Add lesson" , icon: "plus", params: {action: 'new'}}
+             
+        - label: "Users"
+        
+          children: 
+             - { entity: User5 , label: "Users List" , icon: "th-list"}
+             - { entity: User5 , label: "Add User" , icon: "plus", params: {action: 'new'}}
+        
+
+        - label: "Admins"
+          children: 
+             - { entity: Admin , label: "Admins List" , icon: "th-list"}
+             - { entity: Admin , label: "Add Admin" , icon: "plus", params: {action: 'new'}}
+
+        - label: "Categories"
+          children: 
+             - { entity: Category , label: "Categories List" , icon: "th-list"}
+             - { entity: Category , label: "Add Category" , icon: "plus", params: {action: 'new'}}
+
+        - label: "Events"
+          children: 
+             - { entity: Event , label: "Events List" , icon: "th-list"}
+             - { entity: Event , label: "Add Event" , icon: "plus", params: {action: 'new'}}
+        - label: "Comments"
+          children: 
+             - { entity: Comment , label: "Comments List" , icon: "th-list"}
+             - { entity: Comment , label: "Add Comment" , icon: "plus", params: {action: 'new'}}  
+        - label: "Videos"
+          children:
+             - { entity: Videos , label: "Videos List" , icon: "th-list"}
+             - { entity: Videos , label: "Add Video" , icon: "plus", params: {action: 'new'}}
+       
+       
+           
+           
+
+   site_name: '<b> Oficina </b>'
+   user:
+       display_name: true
+       display_avatar: true
+       
+       avatar_property_path: 'uploads/avatars'
+
+   entities:
+        User5:
+
+          class:  App\Entity\User5
+          label: "User"
+          form:
+               fields:
+                    - { type: 'group' , icon: 'pencil' , label : ' Edit User' , css_class: 'col-lg-7'}
+                    - { property: 'email' ,type: 'email'}
+                    - { property: 'username' ,type: 'text'}
+                   
+                    - { property: 'Name' ,type: 'text'} 
+                    - { property: 'Phone' ,type: 'text'} 
+                    
+                    - bio
+                    - field
+                    - published
+                    - userRoles
+                    - password
+                    
+                    
+                    
+                
+          list: 
+                    collapse_actions: true
+                    actions: ['show','edit','delete']
+                    batch_actions: ['delete']
+                    title : "Users"
+                    fields: ['email','phone','name','username',]
+                    
+                    
+          show:
+                    fields:
+                     - Email
+                     - {property: 'bio',type: 'raw'}
+                     - field
+                     - userRoles
+                     
+                     - {property: 'Avatar',type: 'image', base_path: 'uploads/avatars'}
+
+          
+        Article:
+            
+          class: App\Entity\Article
+          label: "Article"
+          form:
+             fields:
+                    - { type: 'group' , icon: 'pencil' , label : 'Edit an article' , css_class: 'col-lg-7'}
+                    - Author
+                    - { property: 'price' , type: 'text'}
+                    - description
+                    - PostedAt
+                    - UpdatedAt
+                    - category 
+                    - rating
+                    - published
+                    - slug
+                    
+                    - { type: 'group' , icon: 'clip' , label : 'Image' , css_class: 'col-lg-5'}
+                    - { property: 'ThumbnailFile', type: 'vich_image'}
+                    - { property: 'videos', type: 'collection', type_options: { entry_type : 'App\Form\VideosType' , by_reference : false }}
+                    
+                
+          list: 
+            collapse_actions: true
+            actions: ['show','edit','delete']
+            batch_actions: ['delete']
+            title : "Articles"
+            fields: ['author','comments','videos','Category', {property: 'thumbnail',type: 'image', base_path: 'uploads/avatars'}]
+            filters: ['published']
+          show:
+            fields:
+            - author
+            - {property: 'description',type: 'raw'}
+            - PostedAt
+            - UpdatedAt
+            - published
+            - {property: 'thumbnail',type: 'image', base_path: 'uploads/avatars'}
+            - Category
+            - comments
+            
+
+
+         
+
+            
+        Admin:
+
+              class:  App\Entity\Admin
+        Videos:
+
+              class:  App\Entity\Videos      
+              label: "Videos"
+              form:
+                fields:
+                    - { type: 'group' , icon: 'pencil' , label : 'Videos' , css_class: 'col-lg-7'}
+                    - Slug
+                    - Author
+                    - Subject
+                    - { property: 'ThumbnailFile', type: 'vich_image'}
+                    - { property: 'Thumbnail', type: 'collection', type_options: { entry_type : 'App\Form\VideosType' , by_reference : false }}
+                 
+                list: 
+                 collapse_actions: true
+                 actions: ['show','edit','delete']
+                 batch_actions: ['delete']
+                 title : "Videos"
+                 fields: ['slug', {property: 'thumbnail',type: 'image', base_path: 'uploads/avatars'}]
+                 filters: ['published']
+                show:
+                 fields:
+           
+                  - author
+                  - subject
+                  - {property: 'Thumbnail',type: 'image', base_path: 'uploads/avatars'}
+           
+      
+        Category:
+
+            class:  App\Entity\Category
+                   
+            label: "Categories"
+            form:
+                fields:
+                    - { type: 'group' , icon: 'pencil' , label : 'Add a new category' , css_class: 'col-lg-7'}
+                    - { property: 'name' ,type: 'text'}
+                 
+                
+                list: 
+                 collapse_actions: true
+                 actions: ['show','edit','delete']
+                 batch_actions: ['delete']
+                 title : "Categories"
+                 fields: ['name','articles']
+                 filters: ['published']
+                show:
+                 fields:
+           
+                  - name
+                   
+        Comment: 
+            class: App\Entity\Comment
+            label: "Comments"
+            form:
+                 fields:
+                    - { type: 'group' , icon: 'pencil' , label : 'Add a comment' , css_class: 'col-lg-7'}
+                    
+                    - art
+                    - CreatedAt
+                    - rating
+                    - content
+                 list: 
+                  collapse_actions: true
+                  actions: ['show','edit','delete']
+                  batch_actions: ['delete']
+                  title : "Comments"
+                  fields: ['CreatedAt','rating','content']
+                  
+                 show:
+                   fields:
+                    - { type: 'group' , icon: 'pencil' , label : 'Comment' , css_class: 'col-lg-7'}
+                    - CreatedAt
+                    - content
+                    - rating
+
+                 
+          
+        Event:
+
+              class: App\Entity\Event
+              label: "Event"
+              form:
+                 fields:
+                    - { type: 'group' , icon: 'pencil' , label : 'Edit an event' , css_class: 'col-lg-7'}
+                    - { property: 'Name' , type: 'text'}
+                    - Date
+                    - { property: 'Time' , type: 'text'}
+                    - Description 
+                    - place
+                    - { property: 'ThumbnailFile', type: 'vich_image' }
+              list: 
+                  collapse_actions: true
+                  actions: ['show','edit','delete']
+                  batch_actions: ['delete']
+                  title : "Events"
+                  fields: ['Name','Date','place', {property: 'thumbnail',type: 'image', base_path: 'uploads/avatars'}]
+                  
+              show:
+               fields:
+                    - { type: 'group' , icon: 'pencil' , label : 'Event' , css_class: 'col-lg-7'}
+                    - { property: 'Name' , type: 'text'}
+                    - date
+                    - { property: 'Time' , type: 'text'}
+                    - Description 
+                    - place
+                    - { property: 'ThumbnailFile', type: 'vich_image' }
+        Courses:
+
+              class: App\Entity\Courses
+              label: "Courses"
+              form:
+                 fields:
+                    - { type: 'group' , icon: 'pencil' , label : 'Add a lesson' , css_class: 'col-lg-7'}
+                    - Course
+                    
+                    - Date
+                    - { property: 'time' , type: 'text'}
+                    - teacher
+                  
+              list: 
+                  collapse_actions: true
+                  actions: ['show','edit','delete']
+                  batch_actions: ['delete']
+                  title : "Courses"
+                  fields: ['Course','Date','time','teacher']
+                  
+              show:
+               fields:
+                    - { type: 'group' , icon: 'pencil' , label : 'Lesson' , css_class: 'col-lg-7'}
+                    
+                    - Course
+                    
+                    - Date
+                    - { property: 'time' , type: 'text'}
+                    - teacher
+               
+                    
+                
+    
+        
+       
+                  
+
+    
+
+
+
+    
+

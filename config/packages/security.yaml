@@ -1,42 +1,87 @@
 security:
     encoders:
-        App\Entity\User:
+        App\Entity\User5:
             algorithm: bcrypt
+        App\Entity\Admin:
+            algorithm: auto
+
+
+
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        users_in_memory: { memory: ~}
-        in_database:
+        
+        app_user_provider:
               entity:
-                  class: App\Entity\User
-                  property: email
-                      
-     
+                  class: App\Entity\User5
+                  property: 'email'
+        app_admin:
+              entity:
+                 class: App\Entity\Admin
+                 property: 'email'       
+        # used to reload user from session & other features (e.g. switch_user)
+                  
+
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            anonymous: ~
+            provider: app_user_provider
+
+            form_login: 
+                login_path: app_login
+                check_path: app_login
+            logout:
+                path: logout_user
+                target: homepage
+                # target: app_any_route
+        admin:
+            
+           # pattern: ^"/admin"
             anonymous: true
+            provider: app_admin
+            form_login:  
+                login_path: admin_login
+                check_path: admin_login
+            guard:
+                authenticators:
+                    - App\Security\CustomAuthAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route
 
-            provider: in_database
-
-            form_login:
-                login_path: account_login
-                check_path: account_login
+            
                
             
 
 
             # activate different ways to authenticate
+
+            
             # https://symfony.com/doc/current/security.html#firewalls-authentication
+            
+            # form_login: true
+            # https://symfony.com/doc/current/security/form_login_setup.html
 
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
-    access_control:
+    #access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+    # - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    access_control:
+        #USER 
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        
+        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
+        - { path: ^/admin, roles: ROLE_ADMIN   }
+
+        # - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }

@@ -4,9 +4,17 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * * @UniqueEntity(
+ * fields={"Email"},
+ * message="             That Email is already taken , try another "
+ * )
  */ 
 class User implements UserInterface
 {
@@ -105,9 +113,16 @@ class User implements UserInterface
         $this->Password = $Password;
 
         return $this;}
-        public function getRoles(){
-            return['ROLE_USER'];
-        }
+        private $roles = [];
+
+public function getRoles(): array
+{
+    $roles = $this->roles;
+    // guarantee every user at least has ROLE_USER
+    $roles[] = 'ROLE_USER';
+
+    return array_unique($roles);
+}
         public function getSalt(){}
         public function eraseCredentials(){}
 

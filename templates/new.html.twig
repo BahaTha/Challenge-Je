@@ -8,5 +8,16 @@
 <body>
 c'est bon effecuté ! 
     
+<script>
+document.querySelector('#search').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+	
+      window.location = e.target.value
+    }
+});
+
+
+
+</script>
 </body>
 </html>
