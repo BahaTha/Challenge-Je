@@ -4,8 +4,8 @@ vich_uploader:
     mappings:
         thumbnails:
             uri_prefix: 'uploads/avatars'
-            upload_destination: '%kernel.project_dir%/public/uploads/avatars'
+            upload_destination: 'C:\Users\ASUS\Desktop\monpfe\public\uploads\avatars'
             
         videos:
             uri_prefix: 'uploads/avatars'
-            upload_destination: '%kernel.project_dir%/public/uploads/avatars'            
+            upload_destination: 'C:\Users\ASUS\Desktop\monpfe\public\uploads\avatars'            

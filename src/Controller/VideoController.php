@@ -12,6 +12,7 @@ use App\Repository\CoursesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class VideoController extends AbstractController
@@ -21,7 +22,7 @@ class VideoController extends AbstractController
      * 
      */
 
-    public function video($slug ,SessionInterface $session , ArticleRepository $repo,CommentRepository $repoc,Request $request , VideosRepository $vid)
+    public function video($slug ,EntityManagerInterface $entityManager,SessionInterface $session , ArticleRepository $repo,CommentRepository $repoc,Request $request , VideosRepository $vid)
         { $comment = new Comment();
         
             $form = $this->createForm(CommentType::class, $comment);
@@ -61,6 +62,7 @@ class VideoController extends AbstractController
                 'items' => $cartWithData,
                 'total' => $total,
                 'videos' => $videos,
+                
                 'totalq' => $totalq,
                 'list' => $articles,
                 'video' => $art,
@@ -77,8 +79,9 @@ class VideoController extends AbstractController
      * 
      */
 
-    public function live($slug ,SessionInterface $session , ArticleRepository $repo,CommentRepository $repoc,Request $request , VideosRepository $vid, EventRepository $event, CoursesRepository $cours )
-    { $comment = new Comment();
+    public function live($slug ,EntityManagerInterface $entityManager,SessionInterface $session , ArticleRepository $repo,CommentRepository $repoc,Request $request , VideosRepository $vid, EventRepository $event, CoursesRepository $cours )
+    {          $this->denyAccessUnlessGranted('ROLE_STUDENT_'.$slug);
+        $comment = new Comment();
     
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);

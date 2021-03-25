@@ -24,7 +24,7 @@ class ArticleType extends AbstractType
             ->add('PostedAt',DateType::class)
             ->add('Author', EntityType::class, [
                 'class' => User5::class,
-                'choice_label' => 'Name',
+                'choice_label' => 'email',
                 
             ])
             ->add('Description')

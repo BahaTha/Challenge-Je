@@ -1,16 +1,24 @@
 easy_admin:
+   
    design:
-       menu:
+      
+      brand_color: 'rgba(26, 188, 156, 0.85)'
+      
+      form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+            - '@VichUploader/Form/fields.html.twig'
+      menu:
         
         - { label: "Entities" }
         - label: "Articles"
           children: 
-             - { entity: Article , label: "Articles List" , icon: "th-list"}
-             - { entity: Article , label: "Add Article" , icon: "plus", params: {action: 'new'}}
+             - { entity: Article , label: "Articles List" , icon: "th-list",ask_confirm: true }
+             - { entity: Article , label: "Add Article" , icon: "plus", params: {action: 'new'}, ask_confirm: true }
+             
         - label: "Courses"
           children: 
-             - { entity: Courses , label: "Courses List" , icon: "th-list"}
-             - { entity: Courses , label: "Add lesson" , icon: "plus", params: {action: 'new'}}
+              - { entity: Courses , label: "Courses List" , icon: "th-list"}
+              - { entity: Courses , label: "Add lesson" , icon: "plus", params: {action: 'new'}}
              
         - label: "Users"
         
@@ -46,7 +54,7 @@ easy_admin:
            
            
 
-   site_name: '<b> Oficina </b>'
+   site_name: '<link rel="icon" href="/coworking/images/rbk.png"><img src="/coworking/images/rbk.png" height="50" width="80"><b> RBK</b>'
    user:
        display_name: true
        display_avatar: true
@@ -119,13 +127,15 @@ easy_admin:
           list: 
             collapse_actions: true
             actions: ['show','edit','delete']
-            batch_actions: ['delete']
+            batch_actions: ['new']
+            
+           
             title : "Articles"
-            fields: ['author','comments','videos','Category', {property: 'thumbnail',type: 'image', base_path: 'uploads/avatars'}]
+            fields: ['Author','comments','videos','Category', {property: 'thumbnail',type: 'image', base_path: 'uploads/avatars'}]
             filters: ['published']
           show:
             fields:
-            - author
+            - Author
             - {property: 'description',type: 'raw'}
             - PostedAt
             - UpdatedAt
@@ -165,7 +175,7 @@ easy_admin:
                 show:
                  fields:
            
-                  - author
+                  - Author
                   - subject
                   - {property: 'Thumbnail',type: 'image', base_path: 'uploads/avatars'}
            
@@ -251,33 +261,33 @@ easy_admin:
                     - { property: 'ThumbnailFile', type: 'vich_image' }
         Courses:
 
-              class: App\Entity\Courses
-              label: "Courses"
-              form:
-                 fields:
-                    - { type: 'group' , icon: 'pencil' , label : 'Add a lesson' , css_class: 'col-lg-7'}
-                    - Course
-                    
-                    - Date
-                    - { property: 'time' , type: 'text'}
-                    - teacher
+               class: App\Entity\Courses
+               label: "Courses"
+               form:
+                  fields:
+                     - { type: 'group' , icon: 'pencil' , label : 'Add a lesson' , css_class: 'col-lg-7'}
+                     - Course
+                     
+                     - Date
+                     - { property: 'time' , type: 'text'}
+                     - teacher
                   
-              list: 
-                  collapse_actions: true
-                  actions: ['show','edit','delete']
-                  batch_actions: ['delete']
-                  title : "Courses"
-                  fields: ['Course','Date','time','teacher']
+               list: 
+                   collapse_actions: true
+                   actions: ['show','edit','delete']
+                   batch_actions: ['delete']
+                   title : "Courses"
+                   fields: ['Course','Date','time','teacher']
                   
-              show:
-               fields:
-                    - { type: 'group' , icon: 'pencil' , label : 'Lesson' , css_class: 'col-lg-7'}
+               show:
+                fields:
+                     - { type: 'group' , icon: 'pencil' , label : 'Lesson' , css_class: 'col-lg-7'}
                     
-                    - Course
+                     - Course
                     
-                    - Date
-                    - { property: 'time' , type: 'text'}
-                    - teacher
+                     - Date
+                     - { property: 'time' , type: 'text'}
+                     - teacher
                
                     
                 

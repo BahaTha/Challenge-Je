@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 use App\Entity\Article;
-
+use App\Entity\User5;
 
 use App\Entity\Comment;
 use App\Form\ArticleType;
@@ -13,7 +13,7 @@ use App\Repository\CommentRepository;
 use Symfony\Component\Form\FormError;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
@@ -23,6 +23,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class ArticleController extends AbstractController
 {
@@ -216,13 +217,13 @@ class ArticleController extends AbstractController
      * @Route("/article-add", name="add_article")
      * @return Response
      */
-    public function add(Request $request , EntityManagerInterface $entityManager, SluggerInterface $slugger)
+    public function add(Request $request , EntityManagerInterface $entityManager, SluggerInterface $slugger , User5 $user5)
     {
        
 
         $user = new Article();
         
-        $form = $this->createForm(Article::class, $user);
+        $form = $this->createForm(Article::class, $user5);
         
        $form->handleRequest($request);
        if ($form->isSubmitted() && $form->isValid()) {
@@ -236,7 +237,7 @@ class ArticleController extends AbstractController
             // Move the file to the directory where brochures are stored
             try {
                 $avatarFile->move(
-                    $this->getParameter('avatars_directory'),
+                    $this->getParameter('upload_directory'),
                     $newFilename
                 );
             } catch (FileException $e) {
@@ -245,9 +246,9 @@ class ArticleController extends AbstractController
 
             // updates the 'brochureFilename' property to store the PDF file name
             // instead of its contents
-            $user->setAvatar($newFilename);
+            $user5->setAvatar($newFilename);
         }    
-       $entityManager->persist($user);
+       $entityManager->persist($user5);
        $entityManager->flush();
 
        $this->addFlash("success", "Welcome to our application");
@@ -260,7 +261,7 @@ class ArticleController extends AbstractController
 
         
            
-        return $this->render('article/index.html.twig',[
+            return $this->render('article/index.html.twig',[
         'form' => $form->createView()
         ]);
             

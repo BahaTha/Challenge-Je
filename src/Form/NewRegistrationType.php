@@ -33,7 +33,7 @@ class NewRegistrationType extends AbstractType
             ], $options );
     }
     public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+    { 
         $builder
         ->add("name", TextType::class, $this->getConfiguration('name',"your name ..."))
       
@@ -66,7 +66,8 @@ class NewRegistrationType extends AbstractType
             // ...
         
             ->add('Bio',TextType::class, $this->getConfiguration('bio',"your bio ..."))
-            ->add('Field',TextType::class, $this->getConfiguration('Field(if you are a teacher)',"example: Development.."))
+            ->add('Field',TextType::class,array(
+                'required' => false))
            
             ->add('password', PasswordType::class,$this->getConfiguration('password',"********"))
             ->add('passwordconfirm', PasswordType::class,$this->getConfiguration('passwordconfirm',"********"))

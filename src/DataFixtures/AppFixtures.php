@@ -2,28 +2,16 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Role;
-use App\Entity\Admin;
-use App\Entity\User5;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Doctrine\Persistence\ObjectManager;
 
-class Appfixtures extends Fixture
+class AppFixtures extends Fixture
 {
-
-
-   public function load(ObjectManager $manager)
-{
-    
-    $user = new Admin();
-
-   
-        
-
-       
-        $manager->persist($user);
+    public function load(ObjectManager $manager)
+    {
+        // $product = new Product();
+        // $manager->persist($product);
 
         $manager->flush();
-}
+    }
 }

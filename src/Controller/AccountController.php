@@ -19,7 +19,7 @@ use App\Form\AccountType as AccountType;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Form\NewRegistrationType as Form;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
@@ -79,14 +79,12 @@ class AccountController extends AbstractController
             $newFilename = $safeFilename.'-'.uniqid().'.'.$avatarFile->guessExtension();
 
             // Move the file to the directory where brochures are stored
-            try {
+          
                 $avatarFile->move(
                     $this->getParameter('avatars_directory'),
                     $newFilename
                 );
-            } catch (FileException $e) {
-                // ... handle exception if something happens during file upload
-            }
+          
 
             // updates the 'brochureFilename' property to store the PDF file name
             // instead of its contents
@@ -103,7 +101,7 @@ class AccountController extends AbstractController
        $entityManager->persist($user);
        $entityManager->flush();
 
-       $this->addFlash("success","Welcome ".$user->getName()." you can login now !");
+       $this->addFlash("success","Welcome to RBK ".$user->getName()." you can login now !");
 
        return $this->redirectToRoute("app_login");  
        
@@ -162,15 +160,12 @@ class AccountController extends AbstractController
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$avatarFile->guessExtension();
     
                 // Move the file to the directory where brochures are stored
-                try {
+              
                     $avatarFile->move(
                         $this->getParameter('avatars_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
-                }
-    
+             
                 // updates the 'brochureFilename' property to store the PDF file name
                 // instead of its contents
                 $user->setAvatar($newFilename);
@@ -226,10 +221,9 @@ class AccountController extends AbstractController
         $form = $this->createForm(PasswordUpdateType::class, $passwordUpdate);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
-        {  $this->addFlash("success", "Password updated :) ");
+        {  
                 
-                
-                return $this->redirectToRoute("account_password");  
+               
             if(!password_verify($passwordUpdate->getOldpassword(),$user->getPassword()))
             {
                 //Gérer l'erreur

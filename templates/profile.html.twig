@@ -72,19 +72,26 @@
 	opacity: 1;
 }
 </style>
-<link rel="icon" href="/coworking/images/ofib.png">
+<link rel="icon" href="/coworking/images/rbk.png">
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="SemiColonWeb" />
 	{% block title %}  {% endblock %}
 	 {% block stylesheets %}{% endblock %}
 
-	<!-- Stylesheets
+		<!-- Stylesheets
 	============================================= -->
+	
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="{{ asset ('/css/bootstrap.css')}}" type="text/css" />
 	<link rel="stylesheet" href="{{ asset ('/style.css')}}" type="text/css" />
+	
+	<link rel="stylesheet" href="/coworking/conference/conference.css" type="text/css" />
 	<link rel="stylesheet" href="{{ asset ('/css/dark.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{ asset ('/css/medical-icons.css')}}" type="text/css" />
+		<link rel="stylesheet" href="{{ asset ('/css/font-icons.css')}}" type="text/css" />
+	<!-- Bootstrap Switch CSS -->
+	<link rel="stylesheet" href="{{asset('/css/bs-switches.css')}}" type="text/css" />
 
 	<link rel="stylesheet" href="{{ asset ('/css/font-icons.css')}}" type="text/css" />
 	<link rel="stylesheet" href="{{ asset ('/css/animate.css')}}" type="text/css" />
@@ -92,8 +99,11 @@
 
 	<link rel="stylesheet" href="{{ asset ('/css/responsive.css')}}" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="{{asset('/css/custom.css')}}" type="text/css" />
+
 
 	<!-- Workspace Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="/css/articles.css" type="text/css" />
 	<link rel="stylesheet" href="{{ asset ('/css/colors.php?color=267DF4')}}" type="text/css" /> <!-- Theme Color -->
 	<link rel="stylesheet" href="{{ asset ('/coworking/css/fonts.css')}}" type="text/css" /> <!-- Theme Font -->
 	<link rel="stylesheet" href="{{ asset ('/coworking/coworking.css')}}" type="text/css" /> <!-- Theme CSS -->
@@ -101,7 +111,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Coworking | Oficina </title>
+	<title>RBK </title>
 
 </head>
 {% for message in app.flashes("success") %}
@@ -114,7 +124,7 @@
 <body class="stretched">
 
 
-	<!-- Document Wrapper
+		<!-- Document Wrapper
 	============================================= -->
 	<div id="wrapper" class="clearfix">
 
@@ -124,18 +134,18 @@
 
 			<div id="header-wrap">
 
-				<div class="container clearfix">
+				<div class="container clearfix">	
 
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
 					<!-- Logo
 					============================================= -->
 					<div id="logo">
-						<a href="index" class="standard-logo" data-sticky-logo="/coworking/images/ofi.png"><img src="/coworking/images/oficina.png" alt="Canvas Logo"></a>
-						<a href="index" class="retina-logo" data-sticky-logo="/coworking/images/ofi.png"><img src="/coworking/images/oficina.png" alt="Canvas Logo"></a>
+						<a href="index" class="standard-logo" data-sticky-logo="/coworking/images/rbk.png"><img src="/coworking/images/rbk.png" alt="Canvas Logo" height="20" width="120"></a>
+						<a href="index" class="retina-logo" data-sticky-logo="/coworking/images/rbk.png"><img src="/coworking/images/rbk.png" alt="Canvas Logo"></a>
 					</div><!-- #logo end -->
-
 					
+
 					<!-- Primary Navigation
 					============================================= -->
 					<nav id="primary-menu" class="dark">
@@ -151,9 +161,6 @@
 									
 								</ul>
 							</li>
-							
-										
-								
 								
 							<li class="mega-menu"><a href="shop"><div>Courses</div></a>
 								<div class="mega-menu-content style-2 clearfix">
@@ -205,10 +212,8 @@
 									
 								</div>
 							</li>
-							<li class="mega-menu"><a href="/News"><div>News</div></a>
-								
-							</li>
-							<li><a href="shop"><div>Shop</div></a>
+							
+							<li><a href="/shop"><div>Shop</div></a>
 								<ul>
 									<li><a href="shop"><div>4 Columns</div></a></li>
 									<li><a href="shop-3.html"><div>3 Columns</div></a>
@@ -296,15 +301,16 @@
 {% endif %}
 	
 						</ul>
-{% if app.user %}
+
 					<!-- Top Cart
 						============================================= -->
 						<div id="top-cart">
-							<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>{{totalq}}</span></a>
+							<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>{{ totalq }}</span></a>
 							<div class="top-cart-content">
 								<div class="top-cart-title">
 									<h4>Shopping Cart</h4>
 								</div>
+								
 								<div class="top-cart-items">
 								 {% for item in items %}
 									<div class="top-cart-item clearfix">
@@ -321,15 +327,18 @@
 									</div>
 								<div class="top-cart-action clearfix">
 									<span class="fleft top-checkout-price">{{ total }} DT</span>
-									<button class="button button-3d button-small nomargin fright" href="Cart">View Cart</button>
+									<a href="/cart"><button class="button button-3d button-small nomargin fright" href="Cart">View Cart</button></a>
 								</div>
-							</div>
-						</div><!-- #top-cart end -->
 						
-{% endif %}
+								
+							</div>
+						</div>	
+						<!-- #top-cart end --> 
+					
+
 									
 
-								<!-- Top Search
+							<!-- Top Search
 						============================================= -->
 						<div id="top-search">
 							<a href="" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
@@ -342,11 +351,11 @@
 <div class="modal1 mfp-hide" id="modal-register">
 			<div class="card divcenter" style="max-width: 540px;">
 				<div class="card-header py-3 nobg center">
-					<h3 class="mb-0 t400">Welcome to Oficina ! </h3>
+					<h3 class="mb-0 t400">Welcome to RBK! </h3>
 				</div>
 				<div class="card-body divcenter py-5" style="max-width: 70%;">
 
-					<a href="#" class="button button-large btn-block si-colored si-facebook nott t400 ls0 center nomargin"><i class="icon-facebook-sign"></i> Log in with Facebook</a>
+					<a href="{{ path('connect_facebook_start') }}" class="button button-large btn-block si-colored si-facebook nott t400 ls0 center nomargin"><i class="icon-facebook-sign"></i> Log in with Facebook</a>
 					<a href="#" class="button button-large btn-block si-colored si-gmail nott t400 ls0 center nomargin"><i class="icon-google-plus-sign"></i> Log in with Gmail</a>
 					
 					
@@ -355,13 +364,14 @@
 					<div class="divider divider-center"><span class="position-relative" style="top: -2px">OR</span></div>
 
 					<form id="login-form" name="login-form" class="nobottommargin row" action="{{ path('app_login')}}" method="post">
+					
 
 						<div class="col-12">
-							<input type="text" id="login-form-username" name="login-form-username" value="" class="form-control not-dark" placeholder="Username" />
+							<input type="text" id="login-form-username" name="_username" value="" class="form-control not-dark" placeholder="Username" />
 						</div>
 
 						<div class="col-12 mt-4">
-							<input type="password" id="login-form-password" name="login-form-password" value="" class="form-control not-dark" placeholder="Password" />
+							<input type="password" id="login-form-password" name="_password" value="" class="form-control not-dark" placeholder="Password" />
 						</div>
 
 						<div class="col-12">
@@ -369,7 +379,14 @@
 						</div>
 
 						<div class="col-12 mt-4">
-							<button class="button btn-block nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>
+				
+			
+				
+				
+				<button class="button btn-block nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>
+						 
+				
+						
 						</div>
 					</form>
 				</div>
@@ -378,65 +395,37 @@
 				</div>
 			</div>
 		</div>
-
+			{% if app.user %}
+		
 					
-							{% if app.user %}
-			{% if is_granted('ROLE_ADMIN') %}
-		<div id="top-account" class="dropdown">
-						<a href="#" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user-secret"></i></a>
-						<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+					<ul class="pr-0 header-button">
+							<li>
+								<a href="#section-tickets" class="button button-effect" data-scrollto="#section-tickets">{{app.user.getName() }}</a>
+								<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
 							<a class="dropdown-item tleft" href="profile">Profile</a>
 							
 							<a class="dropdown-item tleft" href="/profil">Settings</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item tleft" href="logout">Logout <i class="icon-signout"></i></a>
 						</ul>
-					</div>
-					{% elseif is_granted('ROLE_TEACHER') %}
+
+							</li>
+						</ul>
+{% else %}
+	<ul class="pr-0 header-button">
+							<li>
+							<a href="#modal-register" data-lightbox="inline" ><i class="icon-line2-user mr-1 position-relative" style="top: 1px;"></i><span class="d-none d-sm-inline-block font-primary t500">Login</span></a>
+							
 						
-						<div id="top-account" class="dropdown">
-						<a href="#" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user-tie"></i></a>
-						<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-							<a class="dropdown-item tleft" href="profile">Profile</a>
-							
-							<a class="dropdown-item tleft" href="/profil">Settings</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item tleft" href="logout">Logout <i class="icon-signout"></i></a>
 						</ul>
-					</div>
-					{% elseif is_granted('ROLE_ABONNE') %}
-					
-						<div id="top-account" class="dropdown">
-						<a href="#" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user-alt"></i></a>
-						<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-							<a class="dropdown-item tleft" href="profile">Profile</a>
-							
-							<a class="dropdown-item tleft" href="/profil">Settings</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item tleft" href="logout">Logout <i class="icon-signout"></i></a>
-						</ul>
-					</div>
-{% else %}
-<div id="top-account" class="dropdown">
-						<a href="#" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user-alt"></i></a>
-						<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-							<a class="dropdown-item tleft" href="profile">Profile</a>
-							
-							<a class="dropdown-item tleft" href="/profil">Settings</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item tleft" href="logout">Logout <i class="icon-signout"></i></a>
-						</ul>
-					</div>
-					{% endif %}
 
-{% else %}
+							</li>
+						</ul>
 	
 		
 
 	
-<div id="top-account">
-							<a href="#modal-register" data-lightbox="inline" ><i class="icon-line2-user mr-1 position-relative" style="top: 1px;"></i><span class="d-none d-sm-inline-block font-primary t500">Login</span></a>
-						</div>
+
 						{% endif %}
 					
 						</div>
@@ -445,8 +434,6 @@
 
 
 				</div>
-			
-
 
 			</div>
 
@@ -486,7 +473,8 @@
 
 									<div class="tabs tabs-alt clearfix" id="tabs-profile">
 
-										<ul class="tab-nav clearfix">
+										
+										<ul class="list-group">
 											<li><a href="#tab-feeds"><i class="icon-rss2"></i> Feeds</a></li>
 											<li><a href="#tab-replies"><i class="icon-reply"></i> Replies</a></li>
 											<li><a href="#tab-connections"><i class="icon-users"></i> Connections</a></li>
@@ -757,7 +745,7 @@
 								<h4 class="ls0 mb-4 nott text-white">Trending</h4>
 
 								<ul class="list-unstyled ml-0">
-									<li class="mb-2"><a href="#">Shop</a></li>
+							
 									<li class="mb-2"><a href="#">Courses</a></li>
 									<li class="mb-2"><a href="#">Events</a></li>
 								</ul>

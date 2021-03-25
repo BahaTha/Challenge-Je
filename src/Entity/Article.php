@@ -50,6 +50,7 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="App\Entity\User5", inversedBy="Articles")
      */
     private $Author;
 

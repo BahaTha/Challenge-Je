@@ -31,6 +31,7 @@ private $thumbnail;
     private $Slug;
      /**
      * @Vich\UploadableField(mapping="videos", fileNameProperty="thumbnail")
+     * @Assert\File(maxSize="2147483648")
      */
     private $ThumbnailFile;
 

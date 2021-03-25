@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
-<script async>(function(w, d) { w.CollectId = "5edc1d2ef906363bd69e7683"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+<script>(function(w, d) { w.CollectId = "5edc1d2ef906363bd69e7683"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
 
 <!-- Hotjar Tracking Code for My site -->
 
@@ -67,7 +67,7 @@
 	opacity: 1;
 }
 </style>
-<link rel="icon" href="/coworking/images/ofib.png">
+<link rel="icon" href="/coworking/images/rbk.png">
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="SemiColonWeb" />
@@ -76,9 +76,12 @@
 
 	<!-- Stylesheets
 	============================================= -->
+	
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="{{ asset ('/css/bootstrap.css')}}" type="text/css" />
 	<link rel="stylesheet" href="{{ asset ('/style.css')}}" type="text/css" />
+	
+	<link rel="stylesheet" href="/coworking/conference/conference.css" type="text/css" />
 	<link rel="stylesheet" href="{{ asset ('/css/dark.css')}}" type="text/css" />
 	<link rel="stylesheet" href="{{ asset ('/css/medical-icons.css')}}" type="text/css" />
 		<link rel="stylesheet" href="{{ asset ('/css/font-icons.css')}}" type="text/css" />
@@ -103,7 +106,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Coworking | Oficina </title>
+	<title>RBK SCHOOL </title>
 
 </head>
         
@@ -125,15 +128,15 @@
 
 			<div id="header-wrap">
 
-				<div class="container clearfix">
+				<div class="container clearfix">	
 
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
 					<!-- Logo
 					============================================= -->
 					<div id="logo">
-						<a href="index" class="standard-logo" data-sticky-logo="/coworking/images/ofi.png"><img src="/coworking/images/oficina.png" alt="Canvas Logo"></a>
-						<a href="index" class="retina-logo" data-sticky-logo="/coworking/images/ofi.png"><img src="/coworking/images/oficina.png" alt="Canvas Logo"></a>
+						<a href="index" class="standard-logo" data-sticky-logo="/coworking/images/rbk.png"><img src="/coworking/images/rbk.png" alt="Canvas Logo" height="20" width="120"></a>
+						<a href="index" class="retina-logo" data-sticky-logo="/coworking/images/rbk.png"><img src="/coworking/images/rbk.png" alt="Canvas Logo"></a>
 					</div><!-- #logo end -->
 					
 
@@ -203,9 +206,7 @@
 									
 								</div>
 							</li>
-							<li class="mega-menu"><a href="/News"><div>News</div></a>
-								
-							</li>
+							
 							<li><a href="/shop"><div>Shop</div></a>
 								<ul>
 									<li><a href="shop"><div>4 Columns</div></a></li>
@@ -344,7 +345,7 @@
 <div class="modal1 mfp-hide" id="modal-register">
 			<div class="card divcenter" style="max-width: 540px;">
 				<div class="card-header py-3 nobg center">
-					<h3 class="mb-0 t400">Welcome to Oficina ! </h3>
+					<h3 class="mb-0 t400">Welcome to RBK! </h3>
 				</div>
 				<div class="card-body divcenter py-5" style="max-width: 70%;">
 
@@ -389,62 +390,36 @@
 			</div>
 		</div>
 			{% if app.user %}
-			{% if is_granted('ROLE_ADMIN') %}
-		<div id="top-account" class="dropdown">
-						<a href="#" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user-secret"></i></a>
-						<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-							<a class="dropdown-item tleft" href="profile">Profile</a>
-							
-							<a class="dropdown-item tleft" href="/profil">Settings</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item tleft" href="logout">Logout <i class="icon-signout"></i></a>
-						</ul>
-					</div>
-					{% elseif is_granted('ROLE_TEACHER') %}
-						
-						<div id="top-account" class="dropdown">
-						<a href="#" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user-tie"></i></a>
-						<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-							<a class="dropdown-item tleft" href="profile">Profile</a>
-							
-							<a class="dropdown-item tleft" href="/profil">Settings</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item tleft" href="logout">Logout <i class="icon-signout"></i></a>
-						</ul>
-					</div>
-					{% elseif is_granted('ROLE_ABONNE') %}
+		
 					
-						<div id="top-account" class="dropdown">
-						<a href="#" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user-alt"></i></a>
-						<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+					<ul class="pr-0 header-button">
+							<li>
+								<a href="#section-tickets" class="button button-effect" data-scrollto="#section-tickets">{{app.user.getName() }}</a>
+								<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
 							<a class="dropdown-item tleft" href="profile">Profile</a>
 							
 							<a class="dropdown-item tleft" href="/profil">Settings</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item tleft" href="logout">Logout <i class="icon-signout"></i></a>
 						</ul>
-					</div>
-{% else %}
-<div id="top-account" class="dropdown">
-						<a href="#" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user-alt"></i></a>
-						<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-							<a class="dropdown-item tleft" href="profile">Profile</a>
-							
-							<a class="dropdown-item tleft" href="/profil">Settings</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item tleft" href="logout">Logout <i class="icon-signout"></i></a>
-						</ul>
-					</div>
-					{% endif %}
 
+							</li>
+						</ul>
 {% else %}
+	<ul class="pr-0 header-button">
+							<li>
+							<a href="#modal-register" data-lightbox="inline" ><i class="icon-line2-user mr-1 position-relative" style="top: 1px;"></i><span class="d-none d-sm-inline-block font-primary t500">Login</span></a>
+							
+						
+						</ul>
+
+							</li>
+						</ul>
 	
 		
 
 	
-<div id="top-account">
-							<a href="#modal-register" data-lightbox="inline" ><i class="icon-line2-user mr-1 position-relative" style="top: 1px;"></i><span class="d-none d-sm-inline-block font-primary t500">Login</span></a>
-						</div>
+
 						{% endif %}
 					
 						</div>
@@ -453,13 +428,32 @@
 
 
 				</div>
-			
-
 
 			</div>
 
 
 		</header><!-- #header end -->
+		<!-- Hero/Slider
+		============================================= -->
+		<section id="slider" class="slider-element full-screen" style="background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.8)), url('/coworking/images/rbk/meow.jpg') no-repeat center center / cover;">
+			<div class="vertical-middle" style="z-index: 2;">
+				<div class="container dark clearfix">
+					<div class="row justify-content-between mt-4 clearfix">
+						<div class="col-lg-6 parallax" data-0="transform: translateY(0px); opacity: 1" data-300="transform: translateY(50px); opacity: 0">
+							<span class="gradient-underline h4">CHALLENGE'JE 2k21</span>
+							<h2 class="t700 display-2 mb-0">code YOUR WAY To SUCCESS.</h2>
+						</div>
+						<div class="col-lg-6 tright d-flex align-items-end flex-column parallax" data-0="transform: translateY(0px)" data-700="transform: translateY(-50px)">
+							<div class="mt-auto">
+								<h2 class="mb-2 gradient-text">March 24, 2021</h2>
+								<h4 class="t400">Tunis , Tunisia</h4>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!-- #Slider end -->
 		
 
 		<!-- Content
@@ -474,24 +468,24 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-7">
-								<h2 class="display-4 t600 ls--2">We are making better <span class="text-rotater" data-separator="|" data-rotate="fadeIn" data-speed="2000">
-									<span class="t-rotate">Environment|Workspace|CoWorking|Community</span>
+								<h2 class="display-4 t600 ls--2"> RBK<span class="text-rotater" data-separator="|" data-rotate="fadeIn" data-speed="2000">
+								<br>	<span class="t-rotate">Courses|Etc</span>
 								</span> for you.</h2>
 							</div>
 							<div class="col-md-5">
 								<p class="lead text-muted">
-									Collaboratively coordinate adaptive synergy with compelling "outside the box" thinking. Continually recaptiualize user friendly sources whereas leveraged.
+									Made By ENICAR STUDENTS
 								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="ohidden parallax d-flex align-items-center" data-bottom-top="background-position:0px 200px;" data-top-bottom="background-position:0px -400px;" style="background-image: url('/coworking/images/hero.jpg'); background-size: cover; height: 600px; width: 100%;">
+				<div class="ohidden parallax d-flex align-items-center" data-bottom-top="background-position:0px 200px;" data-top-bottom="background-position:0px -400px;" style="background-image: url('/coworking/images/hedhi.jpg'); background-size: cover; height: 600px; width: 100%;">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-6">
-								<h2 class="text-white">The Center is a network of 9 workspaces, from 200 to 3,700 sqft, Build and Designed to support Personal and Businesses in the Creative World.</h2>
+								<h2 class="text-white">This website is made for RBK :)</h2>
 							</div>
 						</div>
 					</div>
@@ -532,8 +526,9 @@
 						</div>
 					</div>
 				</div>
+				<center>
 
-				<div class="section mt-0 pt-md-5 pt-0">
+			<div class="section mt-0 pt-md-5 pt-0">
 					<div class="container clearfix">
 						<div class="row align-items-md-center mb-5">
 							<div class="col-md-6 pr-5">
@@ -558,34 +553,33 @@
 									</div>
 
 									<div class="col-6 col-sm-6 mb-4">
-										<div class="counter color t600"><span data-from="100" data-to="45{{totalus}}" data-refresh-interval="100" data-speed="1500"></span>+</div>
+										<div class="counter color t600"><span data-from="10" data-to="500" data-refresh-interval="100" data-speed="100"></span>+</div>
 										<h5 class="mt-0 t500">Active Members</h5>
 									</div>
 								</div>
-								<p class="text-muted">We provide everything to make clients comfortable and relaxed to work .</p>
+								<p class="text-muted">Meow♥</p>
 							</div>
 							<div class="col-md-3 col-sm-6">
 								<div class="card shadow-sm border-light">
-									<img src="/coworking/images/oficinabureau.png" alt="Featured image 1" class="card-img-top">
+									<img src="/coworking/images/rbk1.jpg" alt="Featured image 1" class="card-img-top">
 									<div class="card-body">
 										<h5 class="card-title t600 color">Meeting Rooms</h5>
-										<p class="card-text">A room provided for singular events such as business conferences and meetings.</p>
+										<p class="card-text">Meow♥</p>
 									</div>
 								</div>
 								<div class="card shadow-sm border-light mt-4">
-									<img src="/coworking/images/features/2.jpg" alt="Featured image 2" class="card-img-top">
+									<img src="/coworking/images/rbk2.jpg" alt="Featured image 2" class="card-img-top">
 									<div class="card-body">
 										<h5 class="card-title t600 color">Private Rooms</h5>
-										<p class="card-text">Think coworking is all about sharing desk space with strangers? Not necessarily. You can get your own office within the coworking space that’s just for your team.</p>
+										<p class="card-text">meow♥</p>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6 pl-sm-3 mt-3 mt-sm-0">
 								<div class="card shadow-sm border-light">
-									<img src="/coworking/images/features/1.jpg" alt="Featured image 3" class="card-img-top">
+									<img src="/coworking/images/rbk3.jpg" alt="Featured image 3" class="card-img-top">
 									<div class="card-body">
-									<h5 class="card-title t600 color">Personal Meetings</h5>
-										<p class="card-text">You can have a personal meeting with one of the team members.</p>
+										<p class="card-text">meow♥</p>
 									</div>
 								</div>
 							</div>
@@ -594,7 +588,7 @@
 				</div>
 
 				<div class="container">
-
+<div id="gotoTop" class="icon-angle-up"></div>
 					<div class="row justify-content-between">
 
 						<!-- Feature Box
@@ -602,7 +596,7 @@
 						<div class="col-lg-4 col-md-6 my-4">
 							<i class="icon-wifi-full color ml-0 mb-4 i-plain d-block fnone"></i>
 							<h4 class="mb-3">Fiber Optic WiFi</h4>
-							<p class="text-muted">Free Wifi 24/7 .</p>
+							<p class="text-muted">Meow meow.</p>
 						</div>
 
 						<!-- Feature Box
@@ -610,7 +604,7 @@
 						<div class="col-lg-4 col-md-6 my-4">
 							<i class="icon-line2-cup color ml-0 mb-3 i-plain d-block fnone"></i>
 							<h4 class="mb-3">Cafeteria</h4>
-							<p class="text-muted">Self-service restaurant where you select and pay for food yourself .</p>
+							<p class="text-muted">Meow meow.</p>
 						</div>
 
 						<!-- Feature Box
@@ -618,7 +612,7 @@
 						<div class="col-lg-4 col-md-6 my-4">
 							<i class="icon-line2-screen-desktop color ml-0 mb-3 i-plain d-block fnone"></i>
 							<h4 class="mb-3">Flexible Desks</h4>
-							<p class="text-muted">The principle is simple: more dedicated spaces but self-service workstations in shared, flexible and connected office spaces .</p>
+							<p class="text-muted">Meow meow.</p>
 						</div>
 
 						<!-- Feature Box
@@ -626,7 +620,7 @@
 						<div class="col-lg-4 col-md-6 my-4">
 							<i class="icon-line2-lock color ml-0 mb-3 i-plain d-block fnone"></i>
 							<h4 class="mb-3">Lockers</h4>
-							<p class="text-muted">Each member has his own locker .</p>
+							<p class="text-muted">Meow meow.</p>
 						</div>
 
 						<!-- Feature Box
@@ -634,7 +628,7 @@
 						<div class="col-lg-4 col-md-6 my-4">
 							<i class="icon-fingerprint color ml-0 mb-3 i-plain d-block fnone"></i>
 							<h4 class="mb-3">100% Secure</h4>
-							<p class="text-muted">Protected by surveillance cameras .</p>
+							<p class="text-muted">Meow meow.</p>
 						</div>
 
 						<!-- Feature Box
@@ -642,7 +636,7 @@
 						<div class="col-lg-4 col-md-6 my-4">
 							<i class="icon-line2-printer color ml-0 mb-3 i-plain d-block fnone"></i>
 							<h4 class="mb-3">Printers &amp; Fax</h4>
-							<p class="text-muted">Both available for everyone, free access .</p>
+							<p class="text-muted">Meow meow.</p>
 						</div>
 
 						<!-- Feature Box
@@ -650,7 +644,7 @@
 						<div class="col-lg-4 col-md-6 my-4">
 							<i class="icon-couch color ml-0 mb-3 i-plain d-block fnone"></i>
 							<h4 class="mb-3">Common Area</h4>
-							<p class="text-muted"> Available for common use by all tenants, (or) groups of tenants and their invitees .</p>
+							<p class="text-muted">Meow meow.</p>
 						</div>
 
 						<!-- Feature Box
@@ -658,7 +652,7 @@
 						<div class="col-lg-4 col-md-6 my-4">
 							<i class="icon-line-clock color ml-0 mb-3 i-plain d-block fnone"></i>
 							<h4 class="mb-3">24x7 Access</h4>
-							<p class="text-muted">We're open 24/7 .</p>
+							<p class="text-muted">Meow meow.</p>
 						</div>
 
 						<!-- Feature Box
@@ -666,20 +660,48 @@
 						<div class="col-lg-4 col-md-6 my-4">
 							<i class="icon-playstation color ml-0 mb-3 i-plain d-block fnone"></i>
 							<h4 class="mb-3">Other Activities</h4>
-							<p class="text-muted">Free activities : Playstation 4 / Xbox .</p>
+							<p class="text-muted">Meow meow.</p>
 						</div>
 					</div>
 				</div>
-
 				<div class="section" style="padding: 80px 0">
+					
+					<!-- Section Speakers
+				============================================= -->
+				<div id="section-speakers" class="section page-section nobg pt-0 topmargin-lg clearfix">
+					<div class="container">
+						<div class="mb-5 dark d-flex flex-wrap justify-content-between align-items-center">
+							<span class="display-4 t700 gradient-underline mb-0">Speakers</span>
+							<a href="#" class="button button-effect m-0">Show All Speakers</a>
+						</div>
+						<div class="card-columns divcenter dark"  style="max-width: 1000px;">
+							<a href="#" class="team">
+								<div class="team-image">
+									<img src="/coworking/images/rbk/baha.jpg" alt="John Doe" height="300" width="300">
+								</div>
+								<div class="team-desc">
+									<div class="team-title"><h4 class="gradient-text"><center>Thabet Bahaeddine</center></h4><span><center>FullStack Developper</center></span></div>
+								</div>
+							</a>
+							<a href="contactus" class="team joinspeaker ">
+								<div class="team-image gradient-bg">
+									<img src="/coworking/conference/images/speakers/blank.jpg" alt="John Doe"height="300" width="300">
+									<i class="icon-line-circle-plus gradient-text"></i>
+								</div>
+								<div class="team-desc" style="z-index: 3;">
+									<div class="team-title"><span><center> Join us !</center> </span></div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div><!-- #section-speaker end -->
+
 					<div class="container">
 						<div class="heading-block nobottomborder mb-0">
 							<div class="before-heading">Select your Plan</div>
 							<h2 class="nott t600 mb-0">Membership</h2>
 						</div>
 					</div>
-
-					<div class="container">
 						<div class="row">
 							<div class="col-12">
 								<div id="price-carousel" class="owl-carousel carousel-widget" data-margin="30" data-nav="false" data-pagi="true" data-items-xs="1" data-items-sm="1" data-items-md="2" data-items-lg="3" data-items-xl="3">
@@ -816,21 +838,21 @@
 							<div class="carousel-column-container">
 								<ul class="carousel-column column-1">
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/oficina1.png" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/oficina1.png');"></a>
+										<a href="/coworking/images/rbk/1.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/1.jpg');"></a>
 									</li>
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/behya2.png" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/behya2.png');"></a>
+										<a href="/coworking/images/rbk/2.jpg.png" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/2.jpg');"></a>
 									</li>
 								</ul>
 								<ul class="carousel-column column-2">
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/oficina2.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/oficina2.jpg'); min-height: 300px"></a>
+										<a href="/coworking/images/rbk/3.jpg.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/3.jpg'); min-height: 300px"></a>
 									</li>
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/behya4.png" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/behya4.png'); min-height: 280px"></a>
+										<a href="/coworking/images/rbk/4.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/4.jpg'); min-height: 280px"></a>
 									</li>
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/behya3.png" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/behya3.png'); min-height: 200px"></a>
+										<a href="/coworking/images/rbk/5.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/5.jpg'); min-height: 200px"></a>
 									</li>
 								</ul>
 							</div>
@@ -840,7 +862,7 @@
 							<div class="carousel-column-container">
 								<ul class="carousel-column column-1">
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/oficinashare.png" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/oficinashare.png'); min-height: 324px"></a>
+										<a href="/coworking/images/rbk/6.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/6.jpg'); min-height: 324px"></a>
 									</li>
 									<li class="carousel-grid-item">
 										<div class="item bgcolor d-flex align-items-center px-4" style="min-height: 480px">
@@ -853,13 +875,13 @@
 								</ul>
 								<ul class="carousel-column column-2">
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/oficinatable.png" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/oficinatable.png');"></a>
+										<a href="/coworking/images/rbk/7.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/7.jpg');"></a>
 									</li>
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/formationps.png" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/formationps.png');"></a>
+										<a href="/coworking/images/rbk/8.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/8.jpg');"></a>
 									</li>
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/behya.png" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/behya.png');"></a>
+										<a href="/coworking/images/rbk/9.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/9.jpg');"></a>
 									</li>
 								</ul>
 							</div>
@@ -869,7 +891,7 @@
 							<div class="carousel-column-container">
 								<ul class="carousel-column column-1">
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/gallery/11.jpg" data-lightbox="gallery-item" class="item bgcolor d-flex align-items-center px-4 img-overlay" style="background-image: url('/coworking/images/gallery/11.jpg'); min-height: 350px">
+										<a href="/coworking/images/rbk/10.jpg" data-lightbox="gallery-item" class="item bgcolor d-flex align-items-center px-4 img-overlay" style="background-image: url('/coworking/images/rbk/10.jpg'); min-height: 350px">
 											<blockquote class="blockquote border-0 mb-0">
 												<p class="mb-3 text-white">"I Belive in Collaboration Rather Than Competition"</p>
 												<footer class="blockquote-footer text-white-50 font-italic">Cynthia Chiam</footer>
@@ -877,18 +899,18 @@
 										</a>
 									</li>
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/gallery/12.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/12.jpg'); min-height: 453px"></a>
+										<a href="/coworking/images/rbk/10.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/10.jpg'); min-height: 453px"></a>
 									</li>
 								</ul>
 								<ul class="carousel-column column-2">
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/gallery/13.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/13.jpg');"></a>
+										<a href="/coworking/images/rbk/11.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/11.jpg');"></a>
 									</li>
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/gallery/14.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/14.jpg');"></a>
+										<a href="/coworking/images/rbk/12.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/12.jpg');"></a>
 									</li>
 									<li class="carousel-grid-item">
-										<a href="/coworking/images/gallery/15.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/gallery/15.jpg');"></a>
+										<a href="/coworking/images/rbk/13.jpg" data-lightbox="gallery-item" class="item" style="background-image: url('/coworking/images/rbk/1jpg');"></a>
 									</li>
 								</ul>
 							</div>
@@ -962,7 +984,7 @@
 					<div class="container">
 						<div class="row justify-content-between align-items-center">
 							<div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 bottommargin-lg">
-								<a href="/coworking/images/oficinavid.mp4" data-lightbox="iframe" class="play-video position-relative"><img src="/coworking/images/oficina.png" alt="Video Image" class="rounded-lg shadow-lg" width="700" height="484" > </center>
+								<a href="https://www.youtube.com/watch?v=kkGEWS9EdBs" data-lightbox="iframe" class="play-video position-relative"><img src="/coworking/images/rbkxd.png" alt="Video Image" class="rounded-lg shadow-lg" height="500">
 									<i class="icon-play"></i>
 								</a>
 							</div>
@@ -996,8 +1018,8 @@
 								<h2 class="ls0">Get One Day Free Trial.</h2>
 								<p class="text-muted mb-5" style="font-size: 18px;">Enthusiastically embrace diverse e-markets after sustainable applications. Collaboratively impact intermandated systems vis-a-vis progressive information.</p>
 								<div class="d-flex">
-									<a href="Register" class="button button-rounded button-xlarge d-block flex-fill m-0 center nott t600 ls0">Sign Up</a>
-									<a href="contact_us" class="button button-rounded button-xlarge d-block flex-fill button-border m-0 ml-3 center nott t600 ls0">Contact Us</a>
+									<a href="#" class="button button-rounded button-xlarge d-block flex-fill m-0 center nott t600 ls0">Sign Up</a>
+									<a href="#" class="button button-rounded button-xlarge d-block flex-fill button-border m-0 ml-3 center nott t600 ls0">Contact Us</a>
 								</div>
 							</div>
 						</div>
@@ -1025,7 +1047,7 @@
 									</div>
 
 									<div class="col-sm-4 col-6">
-										<div class="counter color t600"><span data-from="100" data-to="4500" data-refresh-interval="100" data-speed="1500"></span>+</div>
+										<div class="counter color t600"><span data-from="10" data-to="500" data-refresh-interval="100" data-speed="100"></span>+</div>
 											<h5 class="mt-0 t500">Active Members</h5>
 									</div>
 
@@ -1240,7 +1262,7 @@
 								<h4 class="ls0 mb-4 nott text-white">Trending</h4>
 
 								<ul class="list-unstyled ml-0">
-									<li class="mb-2"><a href="shop">Shop</a></li>
+								
 									<li class="mb-2"><a href="shop">Courses</a></li>
 									<li class="mb-2"><a href="events">Events</a></li>
 								</ul>
@@ -1442,6 +1464,7 @@
 	============================================= -->
 	<script src="{{ asset('/js/jquery.js')}}"></script>
 	<script src="{{ asset('/js/plugins.js')}}"></script>
+	
 
 	<!-- Footer Scripts
 	============================================= -->

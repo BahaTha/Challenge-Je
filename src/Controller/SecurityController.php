@@ -11,13 +11,18 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class SecurityController extends AbstractController
 {
     /**
      * @Route("/login", name="app_login")
      */
-    public function login(Request $request ,AuthenticationUtils $authenticationUtils,SessionInterface $session , ArticleRepository $ArticleRepository): Response
+    public function login(EntityManagerInterface $entityManager,UserPasswordEncoderInterface $encoder,SluggerInterface $slugger,Request $request ,AuthenticationUtils $authenticationUtils,SessionInterface $session , ArticleRepository $ArticleRepository): Response
     
     { $cart = $session->get('cart', []);
         $cartWithData = [];
@@ -64,7 +69,7 @@ class SecurityController extends AbstractController
             // Move the file to the directory where brochures are stored
             try {
                 $avatarFile->move(
-                    $this->getParameter('avatars_directory'),
+                    $this->getParameter('upload_directory'),
                     $newFilename
                 );
             } catch (FileException $e) {

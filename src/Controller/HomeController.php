@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\User5;
+use App\Entity\Comment;
 use App\Form\ContactType;
 use App\Form\NewRegistrationType;
 use App\Repository\EventRepository;
@@ -13,8 +14,8 @@ use App\Repository\CoursesRepository;
 use App\Form\RegistrationType as Form;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Common\Persistence\ObjectManager;
 
+use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
@@ -121,14 +122,12 @@ class HomeController extends AbstractController{
             $newFilename = $safeFilename.'-'.uniqid().'.'.$avatarFile->guessExtension();
 
             // Move the file to the directory where brochures are stored
-            try {
+        
                 $avatarFile->move(
-                    $this->getParameter('avatars_directory'),
+                    $this->getParameter('upload_directory'),
                     $newFilename
                 );
-            } catch (FileException $e) {
-                // ... handle exception if something happens during file upload
-            }
+          
 
             // updates the 'brochureFilename' property to store the PDF file name
             // instead of its contents
@@ -207,18 +206,32 @@ class HomeController extends AbstractController{
 }
  /**
      * @Route("/list/remove/{id}", name="list_remove")
+     * @Method({"DELETE"})
      */
     public function remove ($id , SessionInterface $session ){
 
-        $cart = $session->get('list', []);
-        if (!empty($cart[$id]))
-        {
-            unset($cart[$id]);
-        }
-        $session->set('list', $cart);
-        return $this->redirectToRoute("index");
-    
+       $student = $this->getDoctrine()->getRepository(User5::class)->find($id);
+       $entityManager = $this->getDoctrine()->getManager();
+$entityManager->remove($student);
+$entityManager->flush();
+        $this->addFlash("success","Student removed from  List!");
+        return $this->redirectToRoute("homepage");
+        
     }
+    /**
+     * @Route("/comment/remove/{id}", name="comment_remove")
+     * @Method({"DELETE"})
+     */
+    public function removecomment ($id , SessionInterface $session ){
+
+        $student = $this->getDoctrine()->getRepository(Comment::class)->find($id);
+        $entityManager = $this->getDoctrine()->getManager();
+ $entityManager->remove($student);
+ $entityManager->flush();
+         
+         return $this->redirectToRoute("article_show");
+         
+     }
 /**
  * @Route("/sofiennebhim", name="sofiennehaha")
  */
